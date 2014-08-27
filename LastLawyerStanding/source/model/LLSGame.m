@@ -13,7 +13,7 @@
 @interface LLSGame()
 @property (nonatomic,strong) LLSNetworkManager *networkManager;
 @property (nonatomic,strong) NSMutableDictionary *mutablePlayers;
-@property (nonatomic,strong,readwrite) LLSPlayer *myPlayer;
+@property (nonatomic,strong) NSNumber *myPlayerBeaconId;
 @property (nonatomic,assign,readwrite) BOOL started;
 @end
 
@@ -24,9 +24,11 @@
     if ((self = [super init])) {
         _networkManager = networkManager;
         _mutablePlayers = [NSMutableDictionary dictionary];
-        _myPlayer = [[LLSPlayer alloc] init];
-        _myPlayer.beaconId = myBeaconId;
-        [self addPlayer:_myPlayer];
+        _myPlayerBeaconId = myBeaconId;
+
+        LLSPlayer *myPlayer = [[LLSPlayer alloc] init];
+        myPlayer.beaconId = myBeaconId;
+        [self addPlayer:myPlayer];
     }
     return self;
 }
@@ -41,10 +43,14 @@
     return result;
 }
 
-
 - (NSDictionary *) players;
 {
     return [self.mutablePlayers copy];
+}
+
+- (LLSPlayer *) myPlayer;
+{
+    return self.mutablePlayers[self.myPlayerBeaconId];
 }
 
 - (void) addPlayer:(LLSPlayer *) player;
@@ -70,18 +76,28 @@
     self.started = YES;
 
     NSArray *sortedPlayers = [[self.mutablePlayers allValues] arrayByRandomizing];
-    NSLog(@"after sort\n%@", sortedPlayers);
     NSNumber *nextTargetBeaconId = [[sortedPlayers lastObject] beaconId];
-    NSLog(@"nextTargetBeaconId=%@", nextTargetBeaconId);
     for (LLSPlayer *player in sortedPlayers) {
         player.targetBeaconId = nextTargetBeaconId;
-        NSLog(@"player[%@].targetBeaconId=%@", player.beaconId, player.targetBeaconId);
         nextTargetBeaconId = player.beaconId;
-        NSLog(@"  nextTargetBeaconId=%@", nextTargetBeaconId);
     }
-    NSLog(@"after assign\n%@\n%@", sortedPlayers, self);
 
     [self.networkManager broadcast:self.serializedData];
+}
+
+- (void) broadcastGame;
+{
+    [self.networkManager broadcast:self.serializedData];
+}
+
+- (void) beatMyTarget;
+{
+    NSNumber *loserBeaconId = self.myPlayer.targetBeaconId;
+    LLSPlayer *loserPlayer = self.mutablePlayers[loserBeaconId];
+    self.myPlayer.targetBeaconId = loserPlayer.targetBeaconId;
+    loserPlayer.winnerBeaconId = self.myPlayer.beaconId;
+    loserPlayer.targetBeaconId = @0;
+    [self broadcastGame];
 }
 
 - (NSDictionary *) serializedData;
@@ -97,9 +113,10 @@
 
 - (void) updateFromSerializedData:(NSDictionary *) serializedData;
 {
+    NSNumber *previousWinnerBeaconId = self.myPlayer.winnerBeaconId;
     NSArray *serializedPlayers = serializedData[@"players"];
     for (NSDictionary *serializedPlayer in serializedPlayers) {
-        NSNumber *beaconId = serializedData[@"beaconId"];
+        NSNumber *beaconId = serializedPlayer[@"beaconId"];
         LLSPlayer *player = self.players[beaconId];
         if (player) {
             [player updateFromSerializedData:serializedPlayer];
@@ -107,8 +124,18 @@
             player = [[LLSPlayer alloc] initWithDictionary:serializedPlayer];
             [self addPlayer:player];
         }
+        if ([player.beaconId isEqual:self.myPlayer.beaconId]) {
+            if (!previousWinnerBeaconId && player.winnerBeaconId) {
+                LLSPlayer *winnerPlayer = self.mutablePlayers[player.winnerBeaconId];
+                [self.gameDelegate playerBeatYou:winnerPlayer];
+            }
+        }
     }
+    BOOL previousStarted = self.started;
     self.started = [serializedData[@"started"] boolValue];
+    if (previousStarted) {
+        [self.gameDelegate gameUpdated:self];
+    }
 }
 
 @end

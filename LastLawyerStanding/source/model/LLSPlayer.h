@@ -11,6 +11,7 @@
 
 @interface LLSPlayer : NSObject<LLSSerializable>
 
+@property (nonatomic,strong) NSNumber *winnerBeaconId;
 @property (nonatomic,strong) NSNumber *beaconId;
 @property (nonatomic,strong) NSNumber *targetBeaconId;
 

@@ -48,6 +48,11 @@
     [self.game startGame];
 }
 
+- (IBAction) beatMyTargetAction:(id)sender;
+{
+    [self.game beatMyTarget];
+}
+
 #pragma mark - LLSNetworkManagerProtocol
 
 - (void) peerIDAdded:(MCPeerID *) peerID;
@@ -83,6 +88,16 @@
 - (void) gameStarted:(LLSGame *) game;
 {
     NSLog(@"gameStarted: %@", game);
+}
+
+- (void) gameUpdated:(LLSGame *)game;
+{
+    NSLog(@"gameUpdated:%@", game);
+}
+
+- (void) playerBeatYou:(LLSPlayer *)player;
+{
+    NSLog(@"playerBeatYou: %@", player);
 }
 
 @end
