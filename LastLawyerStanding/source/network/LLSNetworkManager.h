@@ -13,4 +13,6 @@
 - (instancetype) initWithDisplayName:(NSString *) displayName serviceType:(NSString *) serviceType;
 - (void) browseForPeersWithViewController:(UIViewController *) viewController;
 
+- (BOOL) broadcast:(NSDictionary *) dictionary;
+
 @end

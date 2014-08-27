@@ -171,6 +171,7 @@
 		F8A3BC2E19ADA4B500814DD2 /* UIView+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVGUtils.m"; sourceTree = "<group>"; };
 		F8A3BC2F19ADA4B500814DD2 /* UIViewController+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IVGUtils.h"; sourceTree = "<group>"; };
 		F8A3BC3019ADA4B500814DD2 /* UIViewController+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC5419ADAAA200814DD2 /* LLSSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLSSerializable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +312,7 @@
 		F8A3BBE019AD98A000814DD2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				F8A3BC5419ADAAA200814DD2 /* LLSSerializable.h */,
 				F8A3BBE219AD9C0400814DD2 /* LLSGame.h */,
 				F8A3BBE319AD9C0400814DD2 /* LLSGame.m */,
 				F8A3BBE519AD9C0A00814DD2 /* LLSPlayer.h */,

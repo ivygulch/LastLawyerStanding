@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "LLSNetworkManager.h"
+#import "LLSSerializable.h"
 
 @class LLSPlayer;
+@class LLSGame;
 
-@interface LLSGame : NSObject
+@protocol LLSGameProtocol <NSObject>
+- (void) gameStarted:(LLSGame *) game;
+@end
 
+@interface LLSGame : NSObject<LLSSerializable>
+
+@property (nonatomic,weak) id<LLSGameProtocol> gameDelegate;
 @property (nonatomic,strong,readonly) NSDictionary *players;
 @property (nonatomic,assign,readonly) BOOL started;
 

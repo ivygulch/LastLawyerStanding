@@ -80,5 +80,20 @@
     NSLog(@"browserViewControllerWasCancelled");
 }
 
+#pragma mark -
+
+- (BOOL) broadcast:(NSDictionary *) dictionary;
+{
+    NSError *error;
+    NSData *serialized = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&error];
+    if (!serialized) {
+        NSLog(@"Could not serialize: %@\n%@", dictionary, error);
+        return NO;
+    }
+
+
+
+    return YES;
+}
 
 @end

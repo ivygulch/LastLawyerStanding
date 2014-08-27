@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LLSSerializable.h"
 
-@interface LLSPlayer : NSObject
+@class LLSGame;
 
+@interface LLSPlayer : NSObject<LLSSerializable>
+
+@property (nonatomic,strong) LLSGame *game;
 @property (nonatomic,strong) NSNumber *beaconId;
-@property (nonatomic,strong) LLSPlayer *stalker;
 @property (nonatomic,strong) LLSPlayer *target;
 
 @end

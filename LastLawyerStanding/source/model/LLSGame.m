@@ -46,9 +46,20 @@
 {
     BOOL result = [self okayToPerformAction:@"Add player"];
     if (result) {
+        player.game = self;
         [self.mutablePlayers setObject:player forKey:player.beaconId];
     }
     return result;
+}
+
+- (void) setStarted:(BOOL)started;
+{
+    if (_started != started) {
+        if (started) {
+            [self.gameDelegate gameStarted:self];
+        }
+    }
+    _started = started;
 }
 
 - (void) start;
@@ -65,11 +76,28 @@
         nextTarget = player;
     }
 
-//    [self.networkManager broadcastData:game onAcknowledge:^{
-//        [self.networkManager broadcastData:]
-//    }];
-
+    [self.networkManager broadcast:self.serializedData];
 }
 
+- (NSDictionary *) serializedData;
+{
+    NSMutableArray *serializedPlayers = [NSMutableArray arrayWithCapacity:[self.mutablePlayers count]];
+    [self.mutablePlayers enumerateKeysAndObjectsUsingBlock:^(id key, LLSPlayer *player, BOOL *stop) {
+        [serializedPlayers addObject:[player serializedData]];
+    }];
+    return @{@"players":serializedPlayers,
+             @"started":@(self.started)};
+}
+
+- (void) updateFromSerializedData:(NSDictionary *) serializedData;
+{
+    NSArray *serializedPlayers = serializedData[@"players"];
+    for (NSDictionary *serializedPlayer in serializedPlayers) {
+        NSNumber *beaconId = serializedData[@"beaconId"];
+        LLSPlayer *player = self.players[beaconId];
+        [player updateFromSerializedData:serializedPlayer];
+    }
+    self.started = [serializedData[@"started"] boolValue];
+}
 
 @end
