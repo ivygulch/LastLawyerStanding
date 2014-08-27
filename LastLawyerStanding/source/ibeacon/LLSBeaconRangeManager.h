@@ -21,5 +21,6 @@
 @property (nonatomic, weak) NSNumber * minor;
 @property (nonatomic, copy, readonly) NSArray *supportedProximityUUIDs;
 @property (nonatomic, weak) id <LLSBeaconRangeDelegate> beaconDelegate;
+- (id)initWithMinor:(NSNumber *)minor;
 
 @end
