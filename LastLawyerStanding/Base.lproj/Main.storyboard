@@ -157,7 +157,7 @@
         <!--Playtime View Controller-->
         <scene sceneID="hRl-Ug-Fut">
             <objects>
-                <viewController id="VDd-KK-hDo" customClass="LLSPlaytimeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="kLLSPlaytimeViewControllerID" id="VDd-KK-hDo" customClass="LLSPlaytimeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GL5-qn-Lj4"/>
                         <viewControllerLayoutGuide type="bottom" id="t2f-jg-DUe"/>
@@ -243,6 +243,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7s-jP-iga" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="826" y="9"/>
+        </scene>
+        <!--Losing View Controller-->
+        <scene sceneID="qm5-sJ-eYM">
+            <objects>
+                <viewController storyboardIdentifier="kLLSLosingViewControllerID" id="rgh-3a-Cpe" customClass="LLSLosingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RkB-1r-3Ms"/>
+                        <viewControllerLayoutGuide type="bottom" id="32n-vj-Twe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="REs-1X-PAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rB4-Dd-7qE">
+                                <rect key="frame" x="44" y="269" width="233" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="YOU'VE BEEN SERVED">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="endAction:" destination="rgh-3a-Cpe" eventType="touchUpInside" id="CtL-ce-9HK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you have any legal questions, ask the closest automated legal representative." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-LN-9M9">
+                                <rect key="frame" x="0.0" y="299" width="320" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tS4-a3-MsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="9"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

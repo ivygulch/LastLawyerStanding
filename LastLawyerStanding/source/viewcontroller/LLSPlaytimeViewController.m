@@ -7,6 +7,7 @@
 //
 
 #import "LLSPlaytimeViewController.h"
+#import "LLSLosingViewController.h"
 
 @interface LLSPlaytimeViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *numberServedLabel;
@@ -30,6 +31,38 @@
 
 @implementation LLSPlaytimeViewController
 
+
+- (void) gameStarted:(LLSGame *) game;
+{
+//handled in LLSViewController.m
+}
+//you got beat
+//say you beat
+
+-(void)handleLoss{
+
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    LLSLosingViewController* losingVC = [sb instantiateViewControllerWithIdentifier:@"kLLSLosingViewControllerID"];
+    
+    [self presentViewController:losingVC animated:YES completion:nil];
+
+}
+
+- (id)initWithGame:(LLSGame*)game{
+
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    self = [sb instantiateViewControllerWithIdentifier:@"kLLSPlaytimeViewControllerID"];
+    self.gameController = game;
+    game.gameDelegate = self;
+    self.player = game.myPlayer;
+    
+    self.numberRemaining = [game.players count]-1;
+    self.numberRemainingLabel.text = [NSString stringWithFormat:@"%lu",self.numberRemaining];
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,8 +72,7 @@
     self.numberServed = 0;
     
     //TODO:--> remove this debug code
-    self.player = [[LLSPlayer alloc]init];
-    [self didRecieveNewTarget:[NSNumber numberWithLong:127]];
+    [self didRecieveNewTarget:self.gameController.myPlayer.targetBeaconId];
     
     //self.targetTracker.aDelegate = self;
     //self.gameController.aDelegate = self;
@@ -149,5 +181,7 @@
     self.proxyWarningLabel.hidden = NO;
     self.proxyWarningLabel.textColor = [UIColor redColor];
 }
+
+
 
 @end

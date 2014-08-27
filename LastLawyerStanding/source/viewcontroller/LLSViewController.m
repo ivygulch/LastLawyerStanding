@@ -10,12 +10,16 @@
 #import "LLSNetworkManager.h"
 #import "LLSGame.h"
 #import "LLSPlayer.h"
+#import "LLSPlaytimeViewController.h"
 
 @interface LLSViewController ()<LLSNetworkManagerProtocol, LLSGameProtocol>
 @property (nonatomic,strong) IBOutlet UITextField *nameTextField;
 @property (nonatomic,strong) IBOutlet UITextField *beaconIdTextField;
 @property (nonatomic,strong) LLSNetworkManager *networkManager;
 @property (nonatomic,strong) LLSGame *game;
+
+@property (nonatomic,strong) LLSPlaytimeViewController* playtimeViewController;
+
 @end
 
 @implementation LLSViewController
@@ -46,6 +50,8 @@
 - (IBAction) startGameAction:(id) sender;
 {
     [self.game startGame];
+    self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
+    [self presentViewController:self.playtimeViewController animated:YES completion:nil];
 }
 
 #pragma mark - LLSNetworkManagerProtocol
@@ -82,7 +88,11 @@
 
 - (void) gameStarted:(LLSGame *) game;
 {
+    self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
+    [self presentViewController:self.playtimeViewController animated:YES completion:nil];
+
     NSLog(@"gameStarted: %@", game);
+    
 }
 
 @end

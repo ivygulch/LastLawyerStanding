@@ -11,13 +11,15 @@
 #import "LLSGame.h"
 #import "LLSPlayer.h"
 
-@interface LLSPlaytimeViewController : UIViewController<LLSBeaconRangeDelegate>
+@interface LLSPlaytimeViewController : UIViewController<LLSBeaconRangeDelegate,LLSGameProtocol>
 
 @property (nonatomic,strong) LLSPlayer* player;
 @property (nonatomic,strong) LLSGame* gameController;
 @property (nonatomic,strong) LLSBeaconRangeManager* targetTracker;
 
 -(void)didRecieveNewTarget:(NSNumber*)tgtNumber;
+- (id)initWithGame:(LLSGame*)game;
+
 
 
 @end

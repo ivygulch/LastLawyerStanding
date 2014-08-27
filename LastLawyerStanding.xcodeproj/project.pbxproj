@@ -10,6 +10,7 @@
 		228F725B19AD961F00C24ED2 /* LLSBeaconRangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F725A19AD961F00C24ED2 /* LLSBeaconRangeManager.m */; };
 		4BE7726019AD9499007C1817 /* LLSPlaytimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */; };
 		4BE7726319AD9981007C1817 /* LLSJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */; };
+		4BE7726619ADDE57007C1817 /* LLSLosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7726519ADDE57007C1817 /* LLSLosingViewController.m */; };
 		F879A97F19AD862D00921266 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A97E19AD862D00921266 /* Foundation.framework */; };
 		F879A98119AD862D00921266 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98019AD862D00921266 /* CoreGraphics.framework */; };
 		F879A98319AD862D00921266 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98219AD862D00921266 /* UIKit.framework */; };
@@ -79,6 +80,8 @@
 		4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSPlaytimeViewController.m; sourceTree = "<group>"; };
 		4BE7726119AD9981007C1817 /* LLSJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSJoinGameViewController.h; sourceTree = "<group>"; };
 		4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSJoinGameViewController.m; sourceTree = "<group>"; };
+		4BE7726419ADDE57007C1817 /* LLSLosingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSLosingViewController.h; sourceTree = "<group>"; };
+		4BE7726519ADDE57007C1817 /* LLSLosingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSLosingViewController.m; sourceTree = "<group>"; };
 		F879A97B19AD862D00921266 /* LastLawyerStanding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastLawyerStanding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F879A97E19AD862D00921266 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F879A98019AD862D00921266 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -312,6 +315,8 @@
 				4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */,
 				4BE7726119AD9981007C1817 /* LLSJoinGameViewController.h */,
 				4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */,
+				4BE7726419ADDE57007C1817 /* LLSLosingViewController.h */,
+				4BE7726519ADDE57007C1817 /* LLSLosingViewController.m */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				F8A3BC3719ADA4B500814DD2 /* IVGHTMLExtractor.m in Sources */,
 				F8A3BC3D19ADA4B500814DD2 /* IVGTouchableTableView.m in Sources */,
 				F8A3BC4719ADA4B500814DD2 /* NSSet+IVGUtils.m in Sources */,
+				4BE7726619ADDE57007C1817 /* LLSLosingViewController.m in Sources */,
 				F8A3BC4C19ADA4B500814DD2 /* UIImage+IVGUtils.m in Sources */,
 				F8A3BC4519ADA4B500814DD2 /* NSObject+IVGUtils.m in Sources */,
 				F8A3BC3B19ADA4B500814DD2 /* IVGPassthroughView.m in Sources */,
