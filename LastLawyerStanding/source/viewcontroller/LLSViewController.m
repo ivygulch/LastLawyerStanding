@@ -11,6 +11,8 @@
 #import "LLSGame.h"
 #import "LLSPlayer.h"
 #import "LLSPlaytimeViewController.h"
+#import "LLSLosingViewController.h"
+
 
 @interface LLSViewController ()<LLSNetworkManagerProtocol, LLSGameProtocol>
 @property (nonatomic,strong) IBOutlet UITextField *nameTextField;
@@ -100,6 +102,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     self.playtimeViewController = [sb instantiateViewControllerWithIdentifier:@"kLLSPlaytimeViewControllerID"];
     [self presentViewController:self.playtimeViewController animated:YES completion:nil];
+    
+    [self.playtimeViewController setGameController:game];
 
     NSLog(@"gameStarted: %@", game);
 }
@@ -112,6 +116,23 @@
 - (void) playerBeatYou:(LLSPlayer *)player;
 {
     NSLog(@"playerBeatYou: %@", player);
+}
+
+-(void)viewDidLoad{
+
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showLossView) name:@"DidRecieveLossNotification" object:nil];
+
+}
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:@"DidRecieveLossNotification"];
+}
+-(void)showLossView{
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    LLSLosingViewController* losingVC = [sb instantiateViewControllerWithIdentifier:@"kLLSLosingViewControllerID"];
+    
+    [self presentViewController:losingVC animated:YES completion:nil];
+    
 }
 
 @end

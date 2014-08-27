@@ -238,6 +238,34 @@
                                 <color key="textColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsd-m3-m7e">
+                                <rect key="frame" x="20" y="207" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TEST ID">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testIDNumber:" destination="VDd-KK-hDo" eventType="touchUpInside" id="Kiq-dC-1zt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-NJ-46d">
+                                <rect key="frame" x="89" y="206" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cr-nz-h8j">
+                                <rect key="frame" x="151" y="206" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TESTLOSS">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testLoss:" destination="VDd-KK-hDo" eventType="touchUpInside" id="JzR-em-TD0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -248,6 +276,9 @@
                         <outlet property="numberServedLabel" destination="kF8-EW-8Z4" id="cej-zI-m0R"/>
                         <outlet property="proxyWarningLabel" destination="63x-WD-OGK" id="O0d-Dq-CqW"/>
                         <outlet property="targetNameField" destination="6vP-Nv-O15" id="Qjq-OX-XHW"/>
+                        <outlet property="testIDButton" destination="xsd-m3-m7e" id="Epu-pG-ApL"/>
+                        <outlet property="testIDField" destination="Rhy-NJ-46d" id="cAJ-he-3qE"/>
+                        <outlet property="testLossButton" destination="0Cr-nz-h8j" id="H7Q-0J-orC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7s-jP-iga" sceneMemberID="firstResponder"/>

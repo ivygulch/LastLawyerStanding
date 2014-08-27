@@ -7,7 +7,6 @@
 //
 
 #import "LLSPlaytimeViewController.h"
-#import "LLSLosingViewController.h"
 
 @interface LLSPlaytimeViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *numberServedLabel;
@@ -26,6 +25,11 @@
 - (IBAction)edditingBegan:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *testIDButton;
+@property (weak, nonatomic) IBOutlet UITextField *testIDField;
+- (IBAction)testIDNumber:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *testLossButton;
+- (IBAction)testLoss:(id)sender;
 
 @end
 
@@ -62,11 +66,9 @@
 
 -(void)handleLoss{
 
-    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    
-    LLSLosingViewController* losingVC = [sb instantiateViewControllerWithIdentifier:@"kLLSLosingViewControllerID"];
-    
-    [self presentViewController:losingVC animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"DidRecieveLossNotification" object:nil];
+    }];
 
 }
 
@@ -148,6 +150,12 @@
    if (self.enableSubpeonasFromProximity)self.issueSubpeonaButton.enabled = YES;
 
 }
+
+- (IBAction)testIDNumber:(id)sender {
+    
+    [self didRecieveNewTarget:[NSNumber numberWithLongLong: self.testIDField.text.longLongValue]];
+    
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField; {
    
     [self.targetNameField resignFirstResponder];
@@ -203,4 +211,7 @@
 
 
 
+- (IBAction)testLoss:(id)sender {
+    [self handleLoss];
+}
 @end
