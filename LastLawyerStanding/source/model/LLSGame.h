@@ -22,10 +22,11 @@
 @property (nonatomic,weak) id<LLSGameProtocol> gameDelegate;
 @property (nonatomic,strong,readonly) NSDictionary *players;
 @property (nonatomic,assign,readonly) BOOL started;
+@property (nonatomic,strong,readonly) LLSPlayer *myPlayer;
 
-- (BOOL) addPlayer:(LLSPlayer *) player;
-- (void) start;
+- (void) addPlayer:(LLSPlayer *) player;
+- (void) startGame;
 
-- (instancetype) initWithNetworkManager:(LLSNetworkManager *) networkManager;
+- (instancetype) initWithNetworkManager:(LLSNetworkManager *) networkManager myBeaconId:(NSNumber *) myBeaconId;
 
 @end

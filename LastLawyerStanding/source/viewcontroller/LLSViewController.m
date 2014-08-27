@@ -8,9 +8,11 @@
 
 #import "LLSViewController.h"
 #import "LLSNetworkManager.h"
+#import "LLSGame.h"
 
-@interface LLSViewController ()
+@interface LLSViewController ()<LLSNetworkManagerProtocol>
 @property (nonatomic,strong) LLSNetworkManager *networkManager;
+@property (nonatomic,strong) LLSGame *game;
 @end
 
 @implementation LLSViewController
@@ -20,11 +22,25 @@
     [super viewDidLoad];
 
     self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"LLSService"];
+    self.game = [[LLSGame alloc] initWithNetworkManager:self.networkManager myBeaconId:@(1)];
 }
 
 - (IBAction) browseAction:(id) sender;
 {
     [self.networkManager browseForPeersWithViewController:self];
+}
+
+#pragma mark - LLSNetworkManagerProtocol
+
+- (void) peerIDAdded:(MCPeerID *) peerID;
+{
+    [self.networkManager broadcast:self.game.serializedData toPeer:peerID];
+}
+
+- (void) dataReceived:(NSData *) data fromPeerID:(MCPeerID *) peerID;
+{
+    NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"dataReceived: %@ fromPeerID: %@", s, peerID);
 }
 
 @end

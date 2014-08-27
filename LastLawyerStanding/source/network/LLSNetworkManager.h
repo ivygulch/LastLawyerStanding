@@ -8,11 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@import MultipeerConnectivity;
+
+@protocol LLSNetworkManagerProtocol<NSObject>
+- (void) peerIDAdded:(MCPeerID *) peerID;
+- (void) dataReceived:(NSData *) data fromPeerID:(MCPeerID *) peerID;
+@end
+
 @interface LLSNetworkManager : NSObject
+
+@property (nonatomic,weak) id<LLSNetworkManagerProtocol> networkManagerDelegate;
 
 - (instancetype) initWithDisplayName:(NSString *) displayName serviceType:(NSString *) serviceType;
 - (void) browseForPeersWithViewController:(UIViewController *) viewController;
 
+- (BOOL) broadcast:(NSDictionary *) dictionary toPeer:(MCPeerID *) peerID;
 - (BOOL) broadcast:(NSDictionary *) dictionary;
 
 @end

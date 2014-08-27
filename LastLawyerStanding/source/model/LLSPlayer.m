@@ -11,17 +11,30 @@
 
 @implementation LLSPlayer
 
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary;
+{
+    if ((self = [super init])) {
+        _beaconId = dictionary[@"beaconId"];
+        _targetBeaconId = dictionary[@"targetBeaconId"];
+    }
+    return self;
+}
+
 - (NSDictionary *) serializedData;
 {
-    NSNumber *targetBeaconId = self.target ? self.target.beaconId : @0;
+    NSNumber *targetBeaconId = self.targetBeaconId ? self.targetBeaconId : @0;
     return @{@"beaconId":self.beaconId,
-             @"target":targetBeaconId};
+             @"targetBeaconId":targetBeaconId};
 }
 
 - (void) updateFromSerializedData:(NSDictionary *) serializedData;
 {
-    NSNumber *targetBeaconId = serializedData[@"target"];
-    self.target = self.game.players[targetBeaconId];
+    NSNumber *targetBeaconId = serializedData[@"targetBeaconId"];
+    if ([targetBeaconId integerValue] > 0) {
+        self.targetBeaconId = targetBeaconId;
+    } else {
+        self.targetBeaconId = nil;
+    }
 }
 
 @end

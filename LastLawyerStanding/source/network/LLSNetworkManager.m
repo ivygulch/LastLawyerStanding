@@ -8,12 +8,11 @@
 
 #import "LLSNetworkManager.h"
 
-@import MultipeerConnectivity;
-
 @interface LLSNetworkManager()<MCSessionDelegate,MCBrowserViewControllerDelegate>
 @property (nonatomic,strong) MCAdvertiserAssistant *advertiserAssistant;
 @property (nonatomic,strong) MCSession *session;
 @property (nonatomic,copy) NSString *serviceType;
+@property (nonatomic,strong) NSMutableSet *peers;
 @end
 
 @implementation LLSNetworkManager
@@ -27,6 +26,8 @@
         _serviceType = serviceType;
         _advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:serviceType discoveryInfo:nil session:_session];
         [_advertiserAssistant start];
+
+        _peers = [NSMutableSet set];
     }
     return self;
 }
@@ -46,11 +47,16 @@
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state;
 {
     NSLog(@"session:peer:%@ didChangeState:%d", peerID.displayName, state);
+    if (state == MCSessionStateConnected) {
+        [self.peers addObject:peerID];
+        [self.networkManagerDelegate peerIDAdded:peerID];
+    }
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID;
 {
     NSLog(@"session:didReceiveData:%u fromPeer:%@", [data length], peerID.displayName);
+    [self.networkManagerDelegate dataReceived:data fromPeerID:peerID];
 }
 
 - (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID;
@@ -82,7 +88,17 @@
 
 #pragma mark -
 
+- (BOOL) broadcast:(NSDictionary *) dictionary toPeer:(MCPeerID *) peerID;
+{
+    return [self broadcast:dictionary toPeers:@[peerID]];
+}
+
 - (BOOL) broadcast:(NSDictionary *) dictionary;
+{
+    return [self broadcast:dictionary toPeers:[self.peers allObjects]];
+}
+
+- (BOOL) broadcast:(NSDictionary *) dictionary toPeers:(NSArray *) peers;
 {
     NSError *error;
     NSData *serialized = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&error];
@@ -91,8 +107,13 @@
         return NO;
     }
 
-
-
+    if (![self.session sendData:serialized
+                   toPeers:peers
+                  withMode:MCSessionSendDataReliable
+                          error:&error]) {
+        NSLog(@"Could not sendData: %@\n%@", dictionary, error);
+        return NO;
+    }
     return YES;
 }
 

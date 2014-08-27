@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "LLSSerializable.h"
 
-@class LLSGame;
-
 @interface LLSPlayer : NSObject<LLSSerializable>
 
-@property (nonatomic,strong) LLSGame *game;
 @property (nonatomic,strong) NSNumber *beaconId;
-@property (nonatomic,strong) LLSPlayer *target;
+@property (nonatomic,strong) NSNumber *targetBeaconId;
+
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary;
 
 @end
