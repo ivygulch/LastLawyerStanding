@@ -24,6 +24,43 @@
 		F879A9BA19AD88F100921266 /* LLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9B619AD88F100921266 /* LLSAppDelegate.m */; };
 		F879A9BB19AD88F100921266 /* LLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9B919AD88F100921266 /* LLSViewController.m */; };
 		F879A9BF19AD892E00921266 /* LLSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9BE19AD892E00921266 /* LLSNetworkManager.m */; };
+		F8A3BBE419AD9C0400814DD2 /* LLSGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBE319AD9C0400814DD2 /* LLSGame.m */; };
+		F8A3BBE719AD9C0A00814DD2 /* LLSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBE619AD9C0A00814DD2 /* LLSPlayer.m */; };
+		F8A3BC3119ADA4B500814DD2 /* IVGBlockMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBEB19ADA4B500814DD2 /* IVGBlockMap.m */; };
+		F8A3BC3219ADA4B500814DD2 /* IVGClock.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBED19ADA4B500814DD2 /* IVGClock.m */; };
+		F8A3BC3319ADA4B500814DD2 /* IVGGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF019ADA4B500814DD2 /* IVGGradientButton.m */; };
+		F8A3BC3419ADA4B500814DD2 /* IVGGradientTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF219ADA4B500814DD2 /* IVGGradientTableView.m */; };
+		F8A3BC3519ADA4B500814DD2 /* IVGGradientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF419ADA4B500814DD2 /* IVGGradientTableViewCell.m */; };
+		F8A3BC3619ADA4B500814DD2 /* IVGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF619ADA4B500814DD2 /* IVGGradientView.m */; };
+		F8A3BC3719ADA4B500814DD2 /* IVGHTMLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF819ADA4B500814DD2 /* IVGHTMLExtractor.m */; };
+		F8A3BC3819ADA4B500814DD2 /* IVGImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBFA19ADA4B500814DD2 /* IVGImageScrollView.m */; };
+		F8A3BC3919ADA4B500814DD2 /* IVGKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBFC19ADA4B500814DD2 /* IVGKeyboardToolbar.m */; };
+		F8A3BC3A19ADA4B500814DD2 /* IVGPair.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBFE19ADA4B500814DD2 /* IVGPair.m */; };
+		F8A3BC3B19ADA4B500814DD2 /* IVGPassthroughView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0019ADA4B500814DD2 /* IVGPassthroughView.m */; };
+		F8A3BC3C19ADA4B500814DD2 /* IVGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0219ADA4B500814DD2 /* IVGTextView.m */; };
+		F8A3BC3D19ADA4B500814DD2 /* IVGTouchableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0419ADA4B500814DD2 /* IVGTouchableTableView.m */; };
+		F8A3BC3E19ADA4B500814DD2 /* IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0619ADA4B500814DD2 /* IVGUtils.m */; };
+		F8A3BC3F19ADA4B500814DD2 /* IVGView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0819ADA4B500814DD2 /* IVGView.m */; };
+		F8A3BC4019ADA4B500814DD2 /* NSArray+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0A19ADA4B500814DD2 /* NSArray+IVGUtils.m */; };
+		F8A3BC4119ADA4B500814DD2 /* NSData+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0C19ADA4B500814DD2 /* NSData+IVGUtils.m */; };
+		F8A3BC4219ADA4B500814DD2 /* NSDate+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC0E19ADA4B500814DD2 /* NSDate+IVGUtils.m */; };
+		F8A3BC4319ADA4B500814DD2 /* NSDictionary+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1019ADA4B500814DD2 /* NSDictionary+IVGUtils.m */; };
+		F8A3BC4419ADA4B500814DD2 /* NSFileManager+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1219ADA4B500814DD2 /* NSFileManager+IVGUtils.m */; };
+		F8A3BC4519ADA4B500814DD2 /* NSObject+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1419ADA4B500814DD2 /* NSObject+IVGUtils.m */; };
+		F8A3BC4619ADA4B500814DD2 /* NSOrderedSet+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1619ADA4B500814DD2 /* NSOrderedSet+IVGUtils.m */; };
+		F8A3BC4719ADA4B500814DD2 /* NSSet+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1819ADA4B500814DD2 /* NSSet+IVGUtils.m */; };
+		F8A3BC4819ADA4B500814DD2 /* NSString+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1A19ADA4B500814DD2 /* NSString+IVGUtils.m */; };
+		F8A3BC4919ADA4B500814DD2 /* NSURLResponse+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1C19ADA4B500814DD2 /* NSURLResponse+IVGUtils.m */; };
+		F8A3BC4A19ADA4B500814DD2 /* UIColor+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC1E19ADA4B500814DD2 /* UIColor+IVGUtils.m */; };
+		F8A3BC4B19ADA4B500814DD2 /* UIDevice+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2019ADA4B500814DD2 /* UIDevice+IVGUtils.m */; };
+		F8A3BC4C19ADA4B500814DD2 /* UIImage+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2219ADA4B500814DD2 /* UIImage+IVGUtils.m */; };
+		F8A3BC4D19ADA4B500814DD2 /* UILabel+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2419ADA4B500814DD2 /* UILabel+IVGUtils.m */; };
+		F8A3BC4E19ADA4B500814DD2 /* UITabBarController+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2619ADA4B500814DD2 /* UITabBarController+IVGUtils.m */; };
+		F8A3BC4F19ADA4B500814DD2 /* UITextField+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2819ADA4B500814DD2 /* UITextField+IVGUtils.m */; };
+		F8A3BC5019ADA4B500814DD2 /* UIToolbar+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2A19ADA4B500814DD2 /* UIToolbar+IVGUtils.m */; };
+		F8A3BC5119ADA4B500814DD2 /* UIView+IVGCustomProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2C19ADA4B500814DD2 /* UIView+IVGCustomProperties.m */; };
+		F8A3BC5219ADA4B500814DD2 /* UIView+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC2E19ADA4B500814DD2 /* UIView+IVGUtils.m */; };
+		F8A3BC5319ADA4B500814DD2 /* UIViewController+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC3019ADA4B500814DD2 /* UIViewController+IVGUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +99,81 @@
 		F879A9B919AD88F100921266 /* LLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSViewController.m; sourceTree = "<group>"; };
 		F879A9BD19AD892E00921266 /* LLSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSNetworkManager.h; sourceTree = "<group>"; };
 		F879A9BE19AD892E00921266 /* LLSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSNetworkManager.m; sourceTree = "<group>"; };
+		F8A3BBE219AD9C0400814DD2 /* LLSGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSGame.h; sourceTree = "<group>"; };
+		F8A3BBE319AD9C0400814DD2 /* LLSGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSGame.m; sourceTree = "<group>"; };
+		F8A3BBE519AD9C0A00814DD2 /* LLSPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSPlayer.h; sourceTree = "<group>"; };
+		F8A3BBE619AD9C0A00814DD2 /* LLSPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSPlayer.m; sourceTree = "<group>"; };
+		F8A3BBEA19ADA4B500814DD2 /* IVGBlockMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGBlockMap.h; sourceTree = "<group>"; };
+		F8A3BBEB19ADA4B500814DD2 /* IVGBlockMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGBlockMap.m; sourceTree = "<group>"; };
+		F8A3BBEC19ADA4B500814DD2 /* IVGClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGClock.h; sourceTree = "<group>"; };
+		F8A3BBED19ADA4B500814DD2 /* IVGClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGClock.m; sourceTree = "<group>"; };
+		F8A3BBEE19ADA4B500814DD2 /* IVGDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGDebug.h; sourceTree = "<group>"; };
+		F8A3BBEF19ADA4B500814DD2 /* IVGGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGGradientButton.h; sourceTree = "<group>"; };
+		F8A3BBF019ADA4B500814DD2 /* IVGGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGGradientButton.m; sourceTree = "<group>"; };
+		F8A3BBF119ADA4B500814DD2 /* IVGGradientTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGGradientTableView.h; sourceTree = "<group>"; };
+		F8A3BBF219ADA4B500814DD2 /* IVGGradientTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGGradientTableView.m; sourceTree = "<group>"; };
+		F8A3BBF319ADA4B500814DD2 /* IVGGradientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGGradientTableViewCell.h; sourceTree = "<group>"; };
+		F8A3BBF419ADA4B500814DD2 /* IVGGradientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGGradientTableViewCell.m; sourceTree = "<group>"; };
+		F8A3BBF519ADA4B500814DD2 /* IVGGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGGradientView.h; sourceTree = "<group>"; };
+		F8A3BBF619ADA4B500814DD2 /* IVGGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGGradientView.m; sourceTree = "<group>"; };
+		F8A3BBF719ADA4B500814DD2 /* IVGHTMLExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGHTMLExtractor.h; sourceTree = "<group>"; };
+		F8A3BBF819ADA4B500814DD2 /* IVGHTMLExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGHTMLExtractor.m; sourceTree = "<group>"; };
+		F8A3BBF919ADA4B500814DD2 /* IVGImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGImageScrollView.h; sourceTree = "<group>"; };
+		F8A3BBFA19ADA4B500814DD2 /* IVGImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGImageScrollView.m; sourceTree = "<group>"; };
+		F8A3BBFB19ADA4B500814DD2 /* IVGKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGKeyboardToolbar.h; sourceTree = "<group>"; };
+		F8A3BBFC19ADA4B500814DD2 /* IVGKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGKeyboardToolbar.m; sourceTree = "<group>"; };
+		F8A3BBFD19ADA4B500814DD2 /* IVGPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGPair.h; sourceTree = "<group>"; };
+		F8A3BBFE19ADA4B500814DD2 /* IVGPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGPair.m; sourceTree = "<group>"; };
+		F8A3BBFF19ADA4B500814DD2 /* IVGPassthroughView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGPassthroughView.h; sourceTree = "<group>"; };
+		F8A3BC0019ADA4B500814DD2 /* IVGPassthroughView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGPassthroughView.m; sourceTree = "<group>"; };
+		F8A3BC0119ADA4B500814DD2 /* IVGTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGTextView.h; sourceTree = "<group>"; };
+		F8A3BC0219ADA4B500814DD2 /* IVGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGTextView.m; sourceTree = "<group>"; };
+		F8A3BC0319ADA4B500814DD2 /* IVGTouchableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGTouchableTableView.h; sourceTree = "<group>"; };
+		F8A3BC0419ADA4B500814DD2 /* IVGTouchableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGTouchableTableView.m; sourceTree = "<group>"; };
+		F8A3BC0519ADA4B500814DD2 /* IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGUtils.h; sourceTree = "<group>"; };
+		F8A3BC0619ADA4B500814DD2 /* IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGUtils.m; sourceTree = "<group>"; };
+		F8A3BC0719ADA4B500814DD2 /* IVGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGView.h; sourceTree = "<group>"; };
+		F8A3BC0819ADA4B500814DD2 /* IVGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGView.m; sourceTree = "<group>"; };
+		F8A3BC0919ADA4B500814DD2 /* NSArray+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC0A19ADA4B500814DD2 /* NSArray+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC0B19ADA4B500814DD2 /* NSData+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC0C19ADA4B500814DD2 /* NSData+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC0D19ADA4B500814DD2 /* NSDate+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC0E19ADA4B500814DD2 /* NSDate+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC0F19ADA4B500814DD2 /* NSDictionary+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1019ADA4B500814DD2 /* NSDictionary+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1119ADA4B500814DD2 /* NSFileManager+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1219ADA4B500814DD2 /* NSFileManager+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1319ADA4B500814DD2 /* NSObject+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1419ADA4B500814DD2 /* NSObject+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1519ADA4B500814DD2 /* NSOrderedSet+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1619ADA4B500814DD2 /* NSOrderedSet+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOrderedSet+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1719ADA4B500814DD2 /* NSSet+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1819ADA4B500814DD2 /* NSSet+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1919ADA4B500814DD2 /* NSString+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1A19ADA4B500814DD2 /* NSString+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1B19ADA4B500814DD2 /* NSURLResponse+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1C19ADA4B500814DD2 /* NSURLResponse+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1D19ADA4B500814DD2 /* UIColor+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC1E19ADA4B500814DD2 /* UIColor+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC1F19ADA4B500814DD2 /* UIDevice+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2019ADA4B500814DD2 /* UIDevice+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2119ADA4B500814DD2 /* UIImage+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2219ADA4B500814DD2 /* UIImage+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2319ADA4B500814DD2 /* UILabel+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2419ADA4B500814DD2 /* UILabel+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2519ADA4B500814DD2 /* UITabBarController+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2619ADA4B500814DD2 /* UITabBarController+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2719ADA4B500814DD2 /* UITextField+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2819ADA4B500814DD2 /* UITextField+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2919ADA4B500814DD2 /* UIToolbar+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2A19ADA4B500814DD2 /* UIToolbar+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2B19ADA4B500814DD2 /* UIView+IVGCustomProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IVGCustomProperties.h"; sourceTree = "<group>"; };
+		F8A3BC2C19ADA4B500814DD2 /* UIView+IVGCustomProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVGCustomProperties.m"; sourceTree = "<group>"; };
+		F8A3BC2D19ADA4B500814DD2 /* UIView+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC2E19ADA4B500814DD2 /* UIView+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVGUtils.m"; sourceTree = "<group>"; };
+		F8A3BC2F19ADA4B500814DD2 /* UIViewController+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IVGUtils.h"; sourceTree = "<group>"; };
+		F8A3BC3019ADA4B500814DD2 /* UIViewController+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IVGUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +233,7 @@
 		F879A98419AD862D00921266 /* LastLawyerStanding */ = {
 			isa = PBXGroup;
 			children = (
+				F8A3BBE819ADA4B500814DD2 /* external */,
 				F879A9B319AD88F100921266 /* source */,
 				F879A99019AD862D00921266 /* Main.storyboard */,
 				F879A99619AD862D00921266 /* Images.xcassets */,
@@ -161,6 +274,7 @@
 		F879A9B319AD88F100921266 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				F8A3BBE019AD98A000814DD2 /* model */,
 				F879A9BC19AD891200921266 /* network */,
 				F879A9B419AD88F100921266 /* shared */,
 				F879A9B719AD88F100921266 /* viewcontroller */,
@@ -197,6 +311,103 @@
 				F879A9BE19AD892E00921266 /* LLSNetworkManager.m */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		F8A3BBE019AD98A000814DD2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F8A3BBE219AD9C0400814DD2 /* LLSGame.h */,
+				F8A3BBE319AD9C0400814DD2 /* LLSGame.m */,
+				F8A3BBE519AD9C0A00814DD2 /* LLSPlayer.h */,
+				F8A3BBE619AD9C0A00814DD2 /* LLSPlayer.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F8A3BBE819ADA4B500814DD2 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				F8A3BBE919ADA4B500814DD2 /* IVGUtils */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
+		F8A3BBE919ADA4B500814DD2 /* IVGUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F8A3BBEA19ADA4B500814DD2 /* IVGBlockMap.h */,
+				F8A3BBEB19ADA4B500814DD2 /* IVGBlockMap.m */,
+				F8A3BBEC19ADA4B500814DD2 /* IVGClock.h */,
+				F8A3BBED19ADA4B500814DD2 /* IVGClock.m */,
+				F8A3BBEE19ADA4B500814DD2 /* IVGDebug.h */,
+				F8A3BBEF19ADA4B500814DD2 /* IVGGradientButton.h */,
+				F8A3BBF019ADA4B500814DD2 /* IVGGradientButton.m */,
+				F8A3BBF119ADA4B500814DD2 /* IVGGradientTableView.h */,
+				F8A3BBF219ADA4B500814DD2 /* IVGGradientTableView.m */,
+				F8A3BBF319ADA4B500814DD2 /* IVGGradientTableViewCell.h */,
+				F8A3BBF419ADA4B500814DD2 /* IVGGradientTableViewCell.m */,
+				F8A3BBF519ADA4B500814DD2 /* IVGGradientView.h */,
+				F8A3BBF619ADA4B500814DD2 /* IVGGradientView.m */,
+				F8A3BBF719ADA4B500814DD2 /* IVGHTMLExtractor.h */,
+				F8A3BBF819ADA4B500814DD2 /* IVGHTMLExtractor.m */,
+				F8A3BBF919ADA4B500814DD2 /* IVGImageScrollView.h */,
+				F8A3BBFA19ADA4B500814DD2 /* IVGImageScrollView.m */,
+				F8A3BBFB19ADA4B500814DD2 /* IVGKeyboardToolbar.h */,
+				F8A3BBFC19ADA4B500814DD2 /* IVGKeyboardToolbar.m */,
+				F8A3BBFD19ADA4B500814DD2 /* IVGPair.h */,
+				F8A3BBFE19ADA4B500814DD2 /* IVGPair.m */,
+				F8A3BBFF19ADA4B500814DD2 /* IVGPassthroughView.h */,
+				F8A3BC0019ADA4B500814DD2 /* IVGPassthroughView.m */,
+				F8A3BC0119ADA4B500814DD2 /* IVGTextView.h */,
+				F8A3BC0219ADA4B500814DD2 /* IVGTextView.m */,
+				F8A3BC0319ADA4B500814DD2 /* IVGTouchableTableView.h */,
+				F8A3BC0419ADA4B500814DD2 /* IVGTouchableTableView.m */,
+				F8A3BC0519ADA4B500814DD2 /* IVGUtils.h */,
+				F8A3BC0619ADA4B500814DD2 /* IVGUtils.m */,
+				F8A3BC0719ADA4B500814DD2 /* IVGView.h */,
+				F8A3BC0819ADA4B500814DD2 /* IVGView.m */,
+				F8A3BC0919ADA4B500814DD2 /* NSArray+IVGUtils.h */,
+				F8A3BC0A19ADA4B500814DD2 /* NSArray+IVGUtils.m */,
+				F8A3BC0B19ADA4B500814DD2 /* NSData+IVGUtils.h */,
+				F8A3BC0C19ADA4B500814DD2 /* NSData+IVGUtils.m */,
+				F8A3BC0D19ADA4B500814DD2 /* NSDate+IVGUtils.h */,
+				F8A3BC0E19ADA4B500814DD2 /* NSDate+IVGUtils.m */,
+				F8A3BC0F19ADA4B500814DD2 /* NSDictionary+IVGUtils.h */,
+				F8A3BC1019ADA4B500814DD2 /* NSDictionary+IVGUtils.m */,
+				F8A3BC1119ADA4B500814DD2 /* NSFileManager+IVGUtils.h */,
+				F8A3BC1219ADA4B500814DD2 /* NSFileManager+IVGUtils.m */,
+				F8A3BC1319ADA4B500814DD2 /* NSObject+IVGUtils.h */,
+				F8A3BC1419ADA4B500814DD2 /* NSObject+IVGUtils.m */,
+				F8A3BC1519ADA4B500814DD2 /* NSOrderedSet+IVGUtils.h */,
+				F8A3BC1619ADA4B500814DD2 /* NSOrderedSet+IVGUtils.m */,
+				F8A3BC1719ADA4B500814DD2 /* NSSet+IVGUtils.h */,
+				F8A3BC1819ADA4B500814DD2 /* NSSet+IVGUtils.m */,
+				F8A3BC1919ADA4B500814DD2 /* NSString+IVGUtils.h */,
+				F8A3BC1A19ADA4B500814DD2 /* NSString+IVGUtils.m */,
+				F8A3BC1B19ADA4B500814DD2 /* NSURLResponse+IVGUtils.h */,
+				F8A3BC1C19ADA4B500814DD2 /* NSURLResponse+IVGUtils.m */,
+				F8A3BC1D19ADA4B500814DD2 /* UIColor+IVGUtils.h */,
+				F8A3BC1E19ADA4B500814DD2 /* UIColor+IVGUtils.m */,
+				F8A3BC1F19ADA4B500814DD2 /* UIDevice+IVGUtils.h */,
+				F8A3BC2019ADA4B500814DD2 /* UIDevice+IVGUtils.m */,
+				F8A3BC2119ADA4B500814DD2 /* UIImage+IVGUtils.h */,
+				F8A3BC2219ADA4B500814DD2 /* UIImage+IVGUtils.m */,
+				F8A3BC2319ADA4B500814DD2 /* UILabel+IVGUtils.h */,
+				F8A3BC2419ADA4B500814DD2 /* UILabel+IVGUtils.m */,
+				F8A3BC2519ADA4B500814DD2 /* UITabBarController+IVGUtils.h */,
+				F8A3BC2619ADA4B500814DD2 /* UITabBarController+IVGUtils.m */,
+				F8A3BC2719ADA4B500814DD2 /* UITextField+IVGUtils.h */,
+				F8A3BC2819ADA4B500814DD2 /* UITextField+IVGUtils.m */,
+				F8A3BC2919ADA4B500814DD2 /* UIToolbar+IVGUtils.h */,
+				F8A3BC2A19ADA4B500814DD2 /* UIToolbar+IVGUtils.m */,
+				F8A3BC2B19ADA4B500814DD2 /* UIView+IVGCustomProperties.h */,
+				F8A3BC2C19ADA4B500814DD2 /* UIView+IVGCustomProperties.m */,
+				F8A3BC2D19ADA4B500814DD2 /* UIView+IVGUtils.h */,
+				F8A3BC2E19ADA4B500814DD2 /* UIView+IVGUtils.m */,
+				F8A3BC2F19ADA4B500814DD2 /* UIViewController+IVGUtils.h */,
+				F8A3BC3019ADA4B500814DD2 /* UIViewController+IVGUtils.m */,
+			);
+			path = IVGUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,12 +508,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				4BE7726319AD9981007C1817 /* LLSJoinGameViewController.m in Sources */,
+=======
+				F8A3BC3819ADA4B500814DD2 /* IVGImageScrollView.m in Sources */,
+				F8A3BC4E19ADA4B500814DD2 /* UITabBarController+IVGUtils.m in Sources */,
+				F8A3BC3519ADA4B500814DD2 /* IVGGradientTableViewCell.m in Sources */,
+>>>>>>> 362532e494b030bcc63c5e35babb808a347a5667
 				F879A9BB19AD88F100921266 /* LLSViewController.m in Sources */,
+				F8A3BC3F19ADA4B500814DD2 /* IVGView.m in Sources */,
+				F8A3BC5219ADA4B500814DD2 /* UIView+IVGUtils.m in Sources */,
+				F8A3BBE419AD9C0400814DD2 /* LLSGame.m in Sources */,
+				F8A3BC3419ADA4B500814DD2 /* IVGGradientTableView.m in Sources */,
+				F8A3BC3719ADA4B500814DD2 /* IVGHTMLExtractor.m in Sources */,
+				F8A3BC3D19ADA4B500814DD2 /* IVGTouchableTableView.m in Sources */,
+				F8A3BC4719ADA4B500814DD2 /* NSSet+IVGUtils.m in Sources */,
+				F8A3BC4C19ADA4B500814DD2 /* UIImage+IVGUtils.m in Sources */,
+				F8A3BC4519ADA4B500814DD2 /* NSObject+IVGUtils.m in Sources */,
+				F8A3BC3B19ADA4B500814DD2 /* IVGPassthroughView.m in Sources */,
+				F8A3BC4619ADA4B500814DD2 /* NSOrderedSet+IVGUtils.m in Sources */,
+				F8A3BC3C19ADA4B500814DD2 /* IVGTextView.m in Sources */,
+				F8A3BC5019ADA4B500814DD2 /* UIToolbar+IVGUtils.m in Sources */,
 				4BE7726019AD9499007C1817 /* LLSPlaytimeViewController.m in Sources */,
+				F8A3BC5119ADA4B500814DD2 /* UIView+IVGCustomProperties.m in Sources */,
 				F879A9BA19AD88F100921266 /* LLSAppDelegate.m in Sources */,
+				F8A3BC3A19ADA4B500814DD2 /* IVGPair.m in Sources */,
+				F8A3BC3E19ADA4B500814DD2 /* IVGUtils.m in Sources */,
 				F879A9BF19AD892E00921266 /* LLSNetworkManager.m in Sources */,
+				F8A3BC4B19ADA4B500814DD2 /* UIDevice+IVGUtils.m in Sources */,
+				F8A3BC4019ADA4B500814DD2 /* NSArray+IVGUtils.m in Sources */,
+				F8A3BC5319ADA4B500814DD2 /* UIViewController+IVGUtils.m in Sources */,
+				F8A3BC4419ADA4B500814DD2 /* NSFileManager+IVGUtils.m in Sources */,
+				F8A3BC3919ADA4B500814DD2 /* IVGKeyboardToolbar.m in Sources */,
+				F8A3BC4F19ADA4B500814DD2 /* UITextField+IVGUtils.m in Sources */,
+				F8A3BC4119ADA4B500814DD2 /* NSData+IVGUtils.m in Sources */,
+				F8A3BC4819ADA4B500814DD2 /* NSString+IVGUtils.m in Sources */,
+				F8A3BBE719AD9C0A00814DD2 /* LLSPlayer.m in Sources */,
+				F8A3BC4A19ADA4B500814DD2 /* UIColor+IVGUtils.m in Sources */,
+				F8A3BC4919ADA4B500814DD2 /* NSURLResponse+IVGUtils.m in Sources */,
+				F8A3BC3619ADA4B500814DD2 /* IVGGradientView.m in Sources */,
+				F8A3BC4D19ADA4B500814DD2 /* UILabel+IVGUtils.m in Sources */,
+				F8A3BC4219ADA4B500814DD2 /* NSDate+IVGUtils.m in Sources */,
+				F8A3BC4319ADA4B500814DD2 /* NSDictionary+IVGUtils.m in Sources */,
+				F8A3BC3219ADA4B500814DD2 /* IVGClock.m in Sources */,
 				F879A98B19AD862D00921266 /* main.m in Sources */,
+				F8A3BC3319ADA4B500814DD2 /* IVGGradientButton.m in Sources */,
+				F8A3BC3119ADA4B500814DD2 /* IVGBlockMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
