@@ -28,6 +28,8 @@
     self.targetNameField.delegate = self;
     self.issueSubpeonaButton.enabled = NO;
     
+    [self didRecieveNewTarget:[NSNumber numberWithLong:127]];
+    
     //self.targetTracker.aDelegate = self;
     //self.gameController.aDelegate = self;
     
@@ -60,8 +62,32 @@
 
 -(void)didRecieveNewTarget:(NSNumber*)tgtNumber{
     
-    //self.targetTracker = [[LLSTARGETTRACKER alloc]initWithNumber:tgtNumber];
+    self.targetTracker = [[LLSBeaconRangeManager alloc]initWithMinor:tgtNumber];
+    self.targetTracker.beaconDelegate = self;
 
+}
+- (void)beaconVisible;
+{
+    [self showYellowForVisableTarget];
+}
+- (void)beaconInvisible;
+{
+    [self makeInvisableForInvisableTarget];
+}
+- (void)beaconImmediate;
+{
+    [self flashRedForImmediateTarget];
+}
+-(void)makeInvisableForInvisableTarget{
+    self.proxyWarningButton.hidden = YES;
+}
+-(void)showYellowForVisableTarget{
+    self.proxyWarningButton.hidden = NO;
+    self.proxyWarningButton.textColor = [UIColor yellowColor];
+}
+-(void)flashRedForImmediateTarget{
+    self.proxyWarningButton.hidden = NO;
+    self.proxyWarningButton.textColor = [UIColor redColor];
 }
 
 @end

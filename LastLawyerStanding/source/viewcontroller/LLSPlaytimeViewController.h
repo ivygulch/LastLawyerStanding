@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLSBeaconRangeManager.h"
 
-@interface LLSPlaytimeViewController : UIViewController
+@interface LLSPlaytimeViewController : UIViewController<LLSBeaconRangeDelegate>
 
 @property (nonatomic,strong) id target;
 @property (nonatomic,strong) id gameController;
-@property (nonatomic,strong) id targetTracker;
+@property (nonatomic,strong) LLSBeaconRangeManager* targetTracker;
 
 
 -(void)sendNameForTargetID:(NSString*)name;
