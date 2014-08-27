@@ -52,6 +52,8 @@
     [self.game startGame];
     self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
     [self presentViewController:self.playtimeViewController animated:YES completion:nil];
+    [self.playtimeViewController didMoveToParentViewController:self];
+    //[self.playtimeViewController didRecieveNewTarget:self.game.myPlayer.targetBeaconId];
 }
 
 - (IBAction) beatMyTargetAction:(id)sender;
@@ -89,19 +91,34 @@
         NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"Could not parse received data: %@ fromPeerID: %@", s, peerID);
     }
+    if (self.playtimeViewController) {
+        [self.playtimeViewController gameUpdated:self.game];
+    }
 }
 
 - (void) gameStarted:(LLSGame *) game;
 {
-    self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
-    [self presentViewController:self.playtimeViewController animated:YES completion:nil];
-
+    if (!self.playtimeViewController) {
+        self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
+        [self presentViewController:self.playtimeViewController animated:YES completion:nil];
+        
+        [self.playtimeViewController didMoveToParentViewController:self];
+        //[self.playtimeViewController didRecieveNewTarget:game.myPlayer.targetBeaconId];
+    }
+    
     NSLog(@"gameStarted: %@", game);
     
 }
 
 - (void) gameUpdated:(LLSGame *)game;
 {
+    if (!self.playtimeViewController) {
+        self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
+        [self presentViewController:self.playtimeViewController animated:YES completion:nil];
+        
+        [self.playtimeViewController didMoveToParentViewController:self];
+        //[self.playtimeViewController didRecieveNewTarget:game.myPlayer.targetBeaconId];
+    }
     NSLog(@"gameUpdated:%@", game);
 }
 

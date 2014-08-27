@@ -161,7 +161,7 @@
 }             // called when 'return' key pressed. return NO to ignore.
 
 -(void)didRecieveNewTarget:(NSNumber*)tgtNumber{
-    
+    if (tgtNumber){
     self.targetTracker = nil;
     
     self.player.targetBeaconId = tgtNumber;
@@ -170,6 +170,7 @@
     self.targetTracker.beaconDelegate = self;
     
     self.proxyWarningLabel.text = @"PROXIMITY WARNING!!!";
+    }
 
 }
 - (void)beaconVisible;
