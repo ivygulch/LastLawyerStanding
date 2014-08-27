@@ -33,7 +33,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VDd-KK-hDo" kind="modal" id="Ogr-0f-ZbT"/>
+                                    <segue destination="EYY-nT-xQM" kind="modal" id="6Hy-bs-XxK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,6 +84,9 @@
                                 <state key="normal" title="Begin">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="VDd-KK-hDo" kind="modal" id="G9N-NL-6Ag"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are the host" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkR-t5-kyq">
                                 <rect key="frame" x="98" y="181" width="125" height="21"/>

@@ -48,7 +48,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)sendJoinRequestWithID:(NSNumber*)idNumber{
 
+    NSLog(@"login with id:%@",idNumber);
+
+}
 - (IBAction)joinGameAction:(id)sender {
+    [self sendJoinRequestWithID:[NSNumber numberWithLong:self.beconIDField.text.longLongValue]];
 }
 @end

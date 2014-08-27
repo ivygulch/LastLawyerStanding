@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLSGame.h"
 
 @interface LLSJoinGameViewController : UIViewController
 
-@property (nonatomic,strong) id gameController;
+@property (nonatomic,strong) LLSGame* gameController;
 
 @end
