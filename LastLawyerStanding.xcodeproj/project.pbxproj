@@ -155,6 +155,7 @@
 		F879A9B319AD88F100921266 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				F8A3BBE019AD98A000814DD2 /* model */,
 				F879A9BC19AD891200921266 /* network */,
 				F879A9B419AD88F100921266 /* shared */,
 				F879A9B719AD88F100921266 /* viewcontroller */,
@@ -187,6 +188,13 @@
 				F879A9BE19AD892E00921266 /* LLSNetworkManager.m */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		F8A3BBE019AD98A000814DD2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
