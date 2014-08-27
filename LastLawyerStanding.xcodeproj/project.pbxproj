@@ -698,7 +698,7 @@
 				GCC_PREFIX_HEADER = "LastLawyerStanding/LastLawyerStanding-Prefix.pch";
 				INFOPLIST_FILE = "LastLawyerStanding/LastLawyerStanding-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "827FCB0B-7DCE-4289-973E-0FB052D1E47B";
+				PROVISIONING_PROFILE = "FE1B0BF1-9405-4C58-896A-0FC94D1BF554";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -713,7 +713,7 @@
 				GCC_PREFIX_HEADER = "LastLawyerStanding/LastLawyerStanding-Prefix.pch";
 				INFOPLIST_FILE = "LastLawyerStanding/LastLawyerStanding-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "827FCB0B-7DCE-4289-973E-0FB052D1E47B";
+				PROVISIONING_PROFILE = "FE1B0BF1-9405-4C58-896A-0FC94D1BF554";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

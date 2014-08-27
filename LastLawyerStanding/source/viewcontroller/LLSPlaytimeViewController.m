@@ -38,6 +38,27 @@
 }
 //you got beat
 //say you beat
+- (void) gameUpdated:(LLSGame *) game;{
+    
+    int countRemaining = 0;
+    
+    for (LLSPlayer* player in [self.gameController.players allValues]) {
+        if (![player.winnerBeaconId isEqualToNumber:@0]) {
+            countRemaining++;
+        }
+    }
+    self.numberRemaining = countRemaining;
+    
+    self.numberRemainingLabel.text = [NSString stringWithFormat:@"%lu",self.numberRemaining];
+    
+    [self didRecieveNewTarget:self.gameController.myPlayer.targetBeaconId];
+
+}
+- (void) playerBeatYou:(LLSPlayer *) player;{
+    
+    [self handleLoss];
+
+}
 
 -(void)handleLoss{
 
@@ -101,6 +122,8 @@
         self.numberServed++;
         self.numberServedLabel.text = [NSString stringWithFormat:@"%lu"
                                        ,self.numberServed];
+        
+        [self.gameController beatMyTarget];
         
         UILabel* successLabel = [[UILabel alloc]initWithFrame:(CGRect){0,0,self.view.bounds.size.width,self.view.bounds.size.width}];
         successLabel.font = [UIFont systemFontOfSize:100];
