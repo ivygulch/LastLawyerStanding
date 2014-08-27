@@ -26,6 +26,7 @@
         _mutablePlayers = [NSMutableDictionary dictionary];
         _myPlayer = [[LLSPlayer alloc] init];
         _myPlayer.beaconId = myBeaconId;
+        [self addPlayer:_myPlayer];
     }
     return self;
 }
@@ -59,7 +60,7 @@
     self.started = YES;
 
     NSArray *sortedPlayers = [[self.mutablePlayers allValues] arrayByRandomizing];
-    NSNumber *nextTargetBeaconId = [sortedPlayers lastObject];
+    NSNumber *nextTargetBeaconId = [[sortedPlayers lastObject] targetBeaconId];
     for (LLSPlayer *player in sortedPlayers) {
         player.targetBeaconId = nextTargetBeaconId;
         nextTargetBeaconId = player.beaconId;

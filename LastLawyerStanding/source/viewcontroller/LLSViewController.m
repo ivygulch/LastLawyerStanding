@@ -10,24 +10,32 @@
 #import "LLSNetworkManager.h"
 #import "LLSGame.h"
 
-@interface LLSViewController ()<LLSNetworkManagerProtocol>
+@interface LLSViewController ()<LLSNetworkManagerProtocol, LLSGameProtocol>
+@property (nonatomic,strong) IBOutlet UITextField *textField;
 @property (nonatomic,strong) LLSNetworkManager *networkManager;
 @property (nonatomic,strong) LLSGame *game;
 @end
 
 @implementation LLSViewController
 
-- (void)viewDidLoad
+- (IBAction) configureAction:(id)sender
 {
-    [super viewDidLoad];
-
-    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"LLSService"];
+    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:self.textField.text serviceType:@"LLSService"];
+    self.networkManager.networkManagerDelegate = self;
     self.game = [[LLSGame alloc] initWithNetworkManager:self.networkManager myBeaconId:@(1)];
+    self.game.gameDelegate = self;
+
+    [self.textField resignFirstResponder];
 }
 
 - (IBAction) browseAction:(id) sender;
 {
     [self.networkManager browseForPeersWithViewController:self];
+}
+
+- (IBAction) startGameAction:(id) sender;
+{
+    [self.game startGame];
 }
 
 #pragma mark - LLSNetworkManagerProtocol
@@ -41,6 +49,11 @@
 {
     NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"dataReceived: %@ fromPeerID: %@", s, peerID);
+}
+
+- (void) gameStarted:(LLSGame *) game;
+{
+    NSLog(@"gameStarted: %@", game);
 }
 
 @end

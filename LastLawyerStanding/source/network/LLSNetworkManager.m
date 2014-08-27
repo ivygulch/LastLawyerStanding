@@ -79,11 +79,13 @@
 - (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController;
 {
     NSLog(@"browserViewControllerDidFinish");
+    [browserViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController;
 {
     NSLog(@"browserViewControllerWasCancelled");
+    [browserViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -95,7 +97,11 @@
 
 - (BOOL) broadcast:(NSDictionary *) dictionary;
 {
-    return [self broadcast:dictionary toPeers:[self.peers allObjects]];
+    if ([self.peers count] > 0) {
+        return [self broadcast:dictionary toPeers:[self.peers allObjects]];
+    } else {
+        return NO;
+    }
 }
 
 - (BOOL) broadcast:(NSDictionary *) dictionary toPeers:(NSArray *) peers;
