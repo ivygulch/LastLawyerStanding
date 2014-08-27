@@ -508,13 +508,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				4BE7726319AD9981007C1817 /* LLSJoinGameViewController.m in Sources */,
-=======
 				F8A3BC3819ADA4B500814DD2 /* IVGImageScrollView.m in Sources */,
 				F8A3BC4E19ADA4B500814DD2 /* UITabBarController+IVGUtils.m in Sources */,
 				F8A3BC3519ADA4B500814DD2 /* IVGGradientTableViewCell.m in Sources */,
->>>>>>> 362532e494b030bcc63c5e35babb808a347a5667
 				F879A9BB19AD88F100921266 /* LLSViewController.m in Sources */,
 				F8A3BC3F19ADA4B500814DD2 /* IVGView.m in Sources */,
 				F8A3BC5219ADA4B500814DD2 /* UIView+IVGUtils.m in Sources */,
