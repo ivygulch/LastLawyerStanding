@@ -495,6 +495,7 @@
 				F879A9AF19AD862D00921266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F879A9B019AD862D00921266 /* Build configuration list for PBXNativeTarget "LastLawyerStandingTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +504,7 @@
 				F879A9B219AD862D00921266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

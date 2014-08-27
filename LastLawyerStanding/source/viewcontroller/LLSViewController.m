@@ -7,9 +7,10 @@
 //
 
 #import "LLSViewController.h"
+#import "LLSNetworkManager.h"
 
 @interface LLSViewController ()
-
+@property (nonatomic,strong) LLSNetworkManager *networkManager;
 @end
 
 @implementation LLSViewController
@@ -17,13 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"service"];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction) browseAction:(id) sender;
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.networkManager browseForPeersWithViewController:self];
 }
 
 @end

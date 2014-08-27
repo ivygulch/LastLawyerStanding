@@ -8,18 +8,37 @@
 
 #import "LLSNetworkManager.h"
 
+@import MultipeerConnectivity;
+
+@interface LLSNetworkManager()<MCSessionDelegate,MCBrowserViewControllerDelegate>
+@property (nonatomic,strong) MCAdvertiserAssistant *advertiserAssistant;
+@property (nonatomic,strong) MCSession *session;
+@property (nonatomic,copy) NSString *serviceType;
+@end
+
 @implementation LLSNetworkManager
 
-+ (LLSNetworkManager *) sharedManager;
+- (instancetype) initWithDisplayName:(NSString *) displayName serviceType:(NSString *) serviceType;
 {
-    static dispatch_once_t predicate;
-    static LLSNetworkManager* instance = nil;
-    if (instance == nil) {
-        dispatch_once(&predicate, ^{
-            instance = [[LLSNetworkManager alloc] init];
-        });
+    if ((self = [super init])) {
+        MCPeerID *peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
+        _session = [[MCSession alloc] initWithPeer:peerID securityIdentity:nil encryptionPreference:MCEncryptionRequired];
+        _session.delegate = self;
+        _serviceType = serviceType;
+        _advertiserAssistant = [[MCAdvertiserAssistant alloc] initWithServiceType:serviceType discoveryInfo:nil session:_session];
+        [_advertiserAssistant start];
     }
-    return instance;
+    return self;
+}
+
+- (void) browseForPeersWithViewController:(UIViewController *) viewController;
+{
+    MCBrowserViewController *browserViewController = [[MCBrowserViewController alloc] initWithServiceType:self.serviceType session:self.session];
+	browserViewController.delegate = self;
+    browserViewController.minimumNumberOfPeers = kMCSessionMinimumNumberOfPeers;
+    browserViewController.maximumNumberOfPeers = kMCSessionMaximumNumberOfPeers;
+
+    [viewController presentViewController:browserViewController animated:YES completion:nil];
 }
 
 @end

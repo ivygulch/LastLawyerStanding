@@ -10,6 +10,7 @@
 
 @interface LLSNetworkManager : NSObject
 
-+ (LLSNetworkManager *) sharedManager;
+- (instancetype) initWithDisplayName:(NSString *) displayName serviceType:(NSString *) serviceType;
+- (void) browseForPeersWithViewController:(UIViewController *) viewController;
 
 @end
