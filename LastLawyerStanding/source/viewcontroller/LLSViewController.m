@@ -101,12 +101,11 @@
 
 - (void) gameStarted:(LLSGame *) game;
 {
-    if (!self.playtimeViewController) {
         [self presentViewController:self.playtimeViewController animated:YES completion:nil];
         
         [self.playtimeViewController didMoveToParentViewController:self];
         //[self.playtimeViewController didRecieveNewTarget:game.myPlayer.targetBeaconId];
-    }
+    
     
     NSLog(@"gameStarted: %@", game);
     
@@ -114,13 +113,6 @@
 
 - (void) gameUpdated:(LLSGame *)game;
 {
-    if (!self.playtimeViewController) {
-        self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
-        [self presentViewController:self.playtimeViewController animated:YES completion:nil];
-        
-        [self.playtimeViewController didMoveToParentViewController:self];
-        //[self.playtimeViewController didRecieveNewTarget:game.myPlayer.targetBeaconId];
-    }
     NSLog(@"gameUpdated:%@", game);
 }
 
