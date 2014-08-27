@@ -80,10 +80,9 @@
     if ([proximityBeacons count]) {
         // Assume that we will only see one beacon for a given minor value.
         CLBeacon *beacon = [proximityBeacons firstObject];
-        NSLog(@"%d", beacon.rssi);
-        if (beacon.proximity == CLProximityImmediate) {
+        if (beacon.rssi > -75) {
             [self.beaconDelegate beaconImmediate];
-        } else if (beacon.proximity == CLProximityFar || beacon.proximity == CLProximityNear) {
+        } else if (beacon.rssi > -90) {
             [self.beaconDelegate beaconVisible];
         } else {
             [self.beaconDelegate beaconInvisible];
