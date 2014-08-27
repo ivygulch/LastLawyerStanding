@@ -113,6 +113,8 @@
         return NO;
     }
 
+    NSLog(@"broadcast: %@", dictionary);
+
     if (![self.session sendData:serialized
                    toPeers:peers
                   withMode:MCSessionSendDataReliable

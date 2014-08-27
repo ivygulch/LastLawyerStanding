@@ -20,10 +20,16 @@
     return self;
 }
 
+- (NSString *) description;
+{
+    return [NSString stringWithFormat:@"<%p> b=%@ t=%@", self, self.beaconId, self.targetBeaconId];
+}
+
 - (NSDictionary *) serializedData;
 {
     NSNumber *targetBeaconId = self.targetBeaconId ? self.targetBeaconId : @0;
-    return @{@"beaconId":self.beaconId,
+    return @{@"class":NSStringFromClass([self class]),
+             @"beaconId":self.beaconId,
              @"targetBeaconId":targetBeaconId};
 }
 

@@ -9,9 +9,11 @@
 #import "LLSViewController.h"
 #import "LLSNetworkManager.h"
 #import "LLSGame.h"
+#import "LLSPlayer.h"
 
 @interface LLSViewController ()<LLSNetworkManagerProtocol, LLSGameProtocol>
-@property (nonatomic,strong) IBOutlet UITextField *textField;
+@property (nonatomic,strong) IBOutlet UITextField *nameTextField;
+@property (nonatomic,strong) IBOutlet UITextField *beaconIdTextField;
 @property (nonatomic,strong) LLSNetworkManager *networkManager;
 @property (nonatomic,strong) LLSGame *game;
 @end
@@ -20,12 +22,20 @@
 
 - (IBAction) configureAction:(id)sender
 {
-    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:self.textField.text serviceType:@"LLSService"];
+    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:self.nameTextField.text serviceType:@"LLSService"];
     self.networkManager.networkManagerDelegate = self;
-    self.game = [[LLSGame alloc] initWithNetworkManager:self.networkManager myBeaconId:@(1)];
+    NSNumber *beaconId = @([[self.beaconIdTextField text] integerValue]);
+    self.game = [[LLSGame alloc] initWithNetworkManager:self.networkManager myBeaconId:beaconId];
+    self.beaconIdTextField.text = [NSString stringWithFormat:@"%@", beaconId];
     self.game.gameDelegate = self;
 
-    [self.textField resignFirstResponder];
+    [self.nameTextField resignFirstResponder];
+    [self.beaconIdTextField resignFirstResponder];
+}
+
+- (IBAction) debugAction:(id) sender;
+{
+    NSLog(@"game: %@", self.game);
 }
 
 - (IBAction) browseAction:(id) sender;
@@ -47,8 +57,27 @@
 
 - (void) dataReceived:(NSData *) data fromPeerID:(MCPeerID *) peerID;
 {
-    NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"dataReceived: %@ fromPeerID: %@", s, peerID);
+    NSError *error;
+    NSDictionary *serializedData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (serializedData) {
+        if ([serializedData[@"class"] isEqualToString:NSStringFromClass([LLSGame class])]) {
+            [self.game updateFromSerializedData:serializedData];
+        } else if ([serializedData[@"class"] isEqualToString:NSStringFromClass([LLSPlayer class])]) {
+            NSNumber *beaconId = serializedData[@"beaconId"];
+            if (beaconId) {
+                LLSPlayer *player = self.game.players[beaconId];
+                if (player) {
+                    [player updateFromSerializedData:serializedData];
+                } else {
+                    player = [[LLSPlayer alloc] initWithDictionary:serializedData];
+                    [self.game addPlayer:player];
+                }
+            }
+        }
+    } else {
+        NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"Could not parse received data: %@ fromPeerID: %@", s, peerID);
+    }
 }
 
 - (void) gameStarted:(LLSGame *) game;

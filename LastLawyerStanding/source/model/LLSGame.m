@@ -31,6 +31,17 @@
     return self;
 }
 
+- (NSString *) description;
+{
+    NSMutableString *result = [NSMutableString string];
+    [result appendFormat:@"game started=%u", self.started];
+    for (LLSPlayer *player in [self.players allValues]) {
+        [result appendFormat:@"\n%@", player];
+    }
+    return result;
+}
+
+
 - (NSDictionary *) players;
 {
     return [self.mutablePlayers copy];
@@ -39,7 +50,6 @@
 - (void) addPlayer:(LLSPlayer *) player;
 {
     [self.mutablePlayers setObject:player forKey:player.beaconId];
-    [self.networkManager broadcast:player.serializedData];
 }
 
 - (void) setStarted:(BOOL)started;
@@ -60,11 +70,16 @@
     self.started = YES;
 
     NSArray *sortedPlayers = [[self.mutablePlayers allValues] arrayByRandomizing];
-    NSNumber *nextTargetBeaconId = [[sortedPlayers lastObject] targetBeaconId];
+    NSLog(@"after sort\n%@", sortedPlayers);
+    NSNumber *nextTargetBeaconId = [[sortedPlayers lastObject] beaconId];
+    NSLog(@"nextTargetBeaconId=%@", nextTargetBeaconId);
     for (LLSPlayer *player in sortedPlayers) {
         player.targetBeaconId = nextTargetBeaconId;
+        NSLog(@"player[%@].targetBeaconId=%@", player.beaconId, player.targetBeaconId);
         nextTargetBeaconId = player.beaconId;
+        NSLog(@"  nextTargetBeaconId=%@", nextTargetBeaconId);
     }
+    NSLog(@"after assign\n%@\n%@", sortedPlayers, self);
 
     [self.networkManager broadcast:self.serializedData];
 }
@@ -75,7 +90,8 @@
     [self.mutablePlayers enumerateKeysAndObjectsUsingBlock:^(id key, LLSPlayer *player, BOOL *stop) {
         [serializedPlayers addObject:[player serializedData]];
     }];
-    return @{@"players":serializedPlayers,
+    return @{@"class":NSStringFromClass([self class]),
+             @"players":serializedPlayers,
              @"started":@(self.started)};
 }
 
