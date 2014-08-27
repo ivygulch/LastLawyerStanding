@@ -27,6 +27,10 @@
     [super viewDidLoad];
     self.targetNameField.delegate = self;
     self.issueSubpeonaButton.enabled = NO;
+    
+    //self.targetTracker.aDelegate = self;
+    //self.gameController.aDelegate = self;
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -37,7 +41,7 @@
 }
 
 - (IBAction)issueSubpeona:(id)sender {
-    
+    [self.targetNameField resignFirstResponder];
     NSLog(@"issue to %@",self.targetNameField.text);
     
 }
@@ -53,5 +57,11 @@
     return YES;
 
 }             // called when 'return' key pressed. return NO to ignore.
+
+-(void)didRecieveNewTarget:(NSNumber*)tgtNumber{
+    
+    //self.targetTracker = [[LLSTARGETTRACKER alloc]initWithNumber:tgtNumber];
+
+}
 
 @end

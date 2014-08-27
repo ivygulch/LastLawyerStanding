@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BE7726019AD9499007C1817 /* LLSPlaytimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */; };
+		4BE7726319AD9981007C1817 /* LLSJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */; };
 		F879A97F19AD862D00921266 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A97E19AD862D00921266 /* Foundation.framework */; };
 		F879A98119AD862D00921266 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98019AD862D00921266 /* CoreGraphics.framework */; };
 		F879A98319AD862D00921266 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98219AD862D00921266 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		4BE7725E19AD9499007C1817 /* LLSPlaytimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSPlaytimeViewController.h; sourceTree = "<group>"; };
 		4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSPlaytimeViewController.m; sourceTree = "<group>"; };
+		4BE7726119AD9981007C1817 /* LLSJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSJoinGameViewController.h; sourceTree = "<group>"; };
+		4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSJoinGameViewController.m; sourceTree = "<group>"; };
 		F879A97B19AD862D00921266 /* LastLawyerStanding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastLawyerStanding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F879A97E19AD862D00921266 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F879A98019AD862D00921266 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -181,6 +184,8 @@
 				F879A9B919AD88F100921266 /* LLSViewController.m */,
 				4BE7725E19AD9499007C1817 /* LLSPlaytimeViewController.h */,
 				4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */,
+				4BE7726119AD9981007C1817 /* LLSJoinGameViewController.h */,
+				4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE7726319AD9981007C1817 /* LLSJoinGameViewController.m in Sources */,
 				F879A9BB19AD88F100921266 /* LLSViewController.m in Sources */,
 				4BE7726019AD9499007C1817 /* LLSPlaytimeViewController.m in Sources */,
 				F879A9BA19AD88F100921266 /* LLSAppDelegate.m in Sources */,

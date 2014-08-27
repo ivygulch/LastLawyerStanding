@@ -10,6 +10,11 @@
 
 @interface LLSPlaytimeViewController : UIViewController
 
+@property (nonatomic,strong) id target;
+@property (nonatomic,strong) id gameController;
+@property (nonatomic,strong) id targetTracker;
+
+
 -(void)sendNameForTargetID:(NSString*)name;
 -(void)didRecieveResponseToNameSubmission:(BOOL)targetValid;
 
