@@ -35,9 +35,6 @@
 
     [self.nameTextField resignFirstResponder];
     [self.beaconIdTextField resignFirstResponder];
-    
-    self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
-
 }
 
 - (IBAction) debugAction:(id) sender;
@@ -53,10 +50,7 @@
 - (IBAction) startGameAction:(id) sender;
 {
     [self.game startGame];
-    self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
-    [self presentViewController:self.playtimeViewController animated:YES completion:nil];
-    [self.playtimeViewController didMoveToParentViewController:self];
-    //[self.playtimeViewController didRecieveNewTarget:self.game.myPlayer.targetBeaconId];
+    [self startGame:self.game];
 }
 
 - (IBAction) beatMyTargetAction:(id)sender;
@@ -94,21 +88,20 @@
         NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"Could not parse received data: %@ fromPeerID: %@", s, peerID);
     }
-    if (self.playtimeViewController) {
-        [self.playtimeViewController gameUpdated:self.game];
-    }
 }
 
 - (void) gameStarted:(LLSGame *) game;
 {
-        [self presentViewController:self.playtimeViewController animated:YES completion:nil];
-        
-        [self.playtimeViewController didMoveToParentViewController:self];
-        //[self.playtimeViewController didRecieveNewTarget:game.myPlayer.targetBeaconId];
-    
-    
+    [self startGame:game];
+}
+
+- (void) startGame:(LLSGame *) game;
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    self.playtimeViewController = [sb instantiateViewControllerWithIdentifier:@"kLLSPlaytimeViewControllerID"];
+    [self presentViewController:self.playtimeViewController animated:YES completion:nil];
+
     NSLog(@"gameStarted: %@", game);
-    
 }
 
 - (void) gameUpdated:(LLSGame *)game;

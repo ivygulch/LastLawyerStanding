@@ -70,18 +70,13 @@
 
 }
 
-- (id)initWithGame:(LLSGame*)game{
-
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    self = [sb instantiateViewControllerWithIdentifier:@"kLLSPlaytimeViewControllerID"];
-    self.gameController = game;
-    game.gameDelegate = self;
-    self.player = game.myPlayer;
+- (void)setGameController:(LLSGame *)gameController;
+{
+    _gameController = gameController;
+    _gameController.gameDelegate = self;
     
-    self.numberRemaining = [game.players count]-1;
+    self.numberRemaining = [_gameController.players count]-1;
     self.numberRemainingLabel.text = [NSString stringWithFormat:@"%lu",self.numberRemaining];
-    
-    return self;
 }
 
 - (void)viewDidLoad

@@ -18,7 +18,6 @@
 @property (nonatomic,strong) LLSBeaconRangeManager* targetTracker;
 
 -(void)didRecieveNewTarget:(NSNumber*)tgtNumber;
-- (id)initWithGame:(LLSGame*)game;
 
 
 
