@@ -22,13 +22,15 @@
 
 - (NSString *) description;
 {
-    return [NSString stringWithFormat:@"<%p> b=%@ t=%@", self, self.beaconId, self.targetBeaconId];
+    return [NSString stringWithFormat:@"<%p> w=%@ b=%@ t=%@", self, self.winnerBeaconId, self.beaconId, self.targetBeaconId];
 }
 
 - (NSDictionary *) serializedData;
 {
     NSNumber *targetBeaconId = self.targetBeaconId ? self.targetBeaconId : @0;
+    NSNumber *winnerBeaconId = self.winnerBeaconId ? self.winnerBeaconId : @0;
     return @{@"class":NSStringFromClass([self class]),
+             @"winnerBeaconId":winnerBeaconId,
              @"beaconId":self.beaconId,
              @"targetBeaconId":targetBeaconId};
 }
@@ -40,6 +42,12 @@
         self.targetBeaconId = targetBeaconId;
     } else {
         self.targetBeaconId = nil;
+    }
+    NSNumber *winnerBeaconId = serializedData[@"winnerBeaconId"];
+    if ([winnerBeaconId integerValue] > 0) {
+        self.winnerBeaconId = winnerBeaconId;
+    } else {
+        self.winnerBeaconId = nil;
     }
 }
 

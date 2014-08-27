@@ -15,6 +15,8 @@
 
 @protocol LLSGameProtocol <NSObject>
 - (void) gameStarted:(LLSGame *) game;
+- (void) gameUpdated:(LLSGame *) game;
+- (void) playerBeatYou:(LLSPlayer *) player;
 @end
 
 @interface LLSGame : NSObject<LLSSerializable>
@@ -26,6 +28,8 @@
 
 - (void) addPlayer:(LLSPlayer *) player;
 - (void) startGame;
+- (void) broadcastGame;
+- (void) beatMyTarget;
 
 - (instancetype) initWithNetworkManager:(LLSNetworkManager *) networkManager myBeaconId:(NSNumber *) myBeaconId;
 

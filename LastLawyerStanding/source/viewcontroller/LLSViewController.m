@@ -54,6 +54,11 @@
     [self presentViewController:self.playtimeViewController animated:YES completion:nil];
 }
 
+- (IBAction) beatMyTargetAction:(id)sender;
+{
+    [self.game beatMyTarget];
+}
+
 #pragma mark - LLSNetworkManagerProtocol
 
 - (void) peerIDAdded:(MCPeerID *) peerID;
@@ -93,6 +98,16 @@
 
     NSLog(@"gameStarted: %@", game);
     
+}
+
+- (void) gameUpdated:(LLSGame *)game;
+{
+    NSLog(@"gameUpdated:%@", game);
+}
+
+- (void) playerBeatYou:(LLSPlayer *)player;
+{
+    NSLog(@"playerBeatYou: %@", player);
 }
 
 @end
