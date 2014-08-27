@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		228F725B19AD961F00C24ED2 /* LLSBeaconRangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F725A19AD961F00C24ED2 /* LLSBeaconRangeManager.m */; };
 		4BE7726019AD9499007C1817 /* LLSPlaytimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */; };
 		4BE7726319AD9981007C1817 /* LLSJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */; };
-		228F725B19AD961F00C24ED2 /* LLSBeaconRangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F725A19AD961F00C24ED2 /* LLSBeaconRangeManager.m */; };
 		F879A97F19AD862D00921266 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A97E19AD862D00921266 /* Foundation.framework */; };
 		F879A98119AD862D00921266 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98019AD862D00921266 /* CoreGraphics.framework */; };
 		F879A98319AD862D00921266 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98219AD862D00921266 /* UIKit.framework */; };
@@ -27,9 +27,7 @@
 		F879A9BF19AD892E00921266 /* LLSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9BE19AD892E00921266 /* LLSNetworkManager.m */; };
 		F8A3BBE419AD9C0400814DD2 /* LLSGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBE319AD9C0400814DD2 /* LLSGame.m */; };
 		F8A3BBE719AD9C0A00814DD2 /* LLSPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBE619AD9C0A00814DD2 /* LLSPlayer.m */; };
-		F8A3BC3119ADA4B500814DD2 /* IVGBlockMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBEB19ADA4B500814DD2 /* IVGBlockMap.m */; };
 		F8A3BC3219ADA4B500814DD2 /* IVGClock.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBED19ADA4B500814DD2 /* IVGClock.m */; };
-		F8A3BC3319ADA4B500814DD2 /* IVGGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF019ADA4B500814DD2 /* IVGGradientButton.m */; };
 		F8A3BC3419ADA4B500814DD2 /* IVGGradientTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF219ADA4B500814DD2 /* IVGGradientTableView.m */; };
 		F8A3BC3519ADA4B500814DD2 /* IVGGradientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF419ADA4B500814DD2 /* IVGGradientTableViewCell.m */; };
 		F8A3BC3619ADA4B500814DD2 /* IVGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF619ADA4B500814DD2 /* IVGGradientView.m */; };
@@ -75,12 +73,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		228F725919AD961F00C24ED2 /* LLSBeaconRangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLSBeaconRangeManager.h; path = ibeacon/LLSBeaconRangeManager.h; sourceTree = "<group>"; };
+		228F725A19AD961F00C24ED2 /* LLSBeaconRangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLSBeaconRangeManager.m; path = ibeacon/LLSBeaconRangeManager.m; sourceTree = "<group>"; };
 		4BE7725E19AD9499007C1817 /* LLSPlaytimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSPlaytimeViewController.h; sourceTree = "<group>"; };
 		4BE7725F19AD9499007C1817 /* LLSPlaytimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSPlaytimeViewController.m; sourceTree = "<group>"; };
 		4BE7726119AD9981007C1817 /* LLSJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSJoinGameViewController.h; sourceTree = "<group>"; };
 		4BE7726219AD9981007C1817 /* LLSJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSJoinGameViewController.m; sourceTree = "<group>"; };
-		228F725919AD961F00C24ED2 /* LLSBeaconRangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLSBeaconRangeManager.h; path = ibeacon/LLSBeaconRangeManager.h; sourceTree = "<group>"; };
-		228F725A19AD961F00C24ED2 /* LLSBeaconRangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLSBeaconRangeManager.m; path = ibeacon/LLSBeaconRangeManager.m; sourceTree = "<group>"; };
 		F879A97B19AD862D00921266 /* LastLawyerStanding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastLawyerStanding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F879A97E19AD862D00921266 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F879A98019AD862D00921266 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -630,7 +628,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -668,7 +665,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
