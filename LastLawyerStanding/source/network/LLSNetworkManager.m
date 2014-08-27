@@ -41,4 +41,44 @@
     [viewController presentViewController:browserViewController animated:YES completion:nil];
 }
 
+#pragma mark - MCSessionDelegate
+
+- (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state;
+{
+    NSLog(@"session:peer:%@ didChangeState:%d", peerID.displayName, state);
+}
+
+- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID;
+{
+    NSLog(@"session:didReceiveData:%u fromPeer:%@", [data length], peerID.displayName);
+}
+
+- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID;
+{
+    NSLog(@"session:didReceiveStream:withName:%@ fromPeer:%@", streamName, peerID.displayName);
+}
+
+- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress;
+{
+    NSLog(@"session:didStartReceivingResourceWithName:%@ fromPeer:%@", resourceName, peerID.displayName);
+}
+
+- (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error;
+{    
+    NSLog(@"session:didFinishReceivingResourceWithName:%@ fromPeer:%@", resourceName, peerID.displayName);
+}
+
+#pragma mark - MCBrowserViewControllerDelegate
+
+- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController;
+{
+    NSLog(@"browserViewControllerDidFinish");
+}
+
+- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController;
+{
+    NSLog(@"browserViewControllerWasCancelled");
+}
+
+
 @end

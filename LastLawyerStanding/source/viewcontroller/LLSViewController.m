@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 
-    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"service"];
+    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"LLSService"];
 }
 
 - (IBAction) browseAction:(id) sender;
