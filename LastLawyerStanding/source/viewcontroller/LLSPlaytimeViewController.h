@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "LLSBeaconRangeManager.h"
+#import "LLSGame.h"
+#import "LLSPlayer.h"
 
 @interface LLSPlaytimeViewController : UIViewController<LLSBeaconRangeDelegate>
 
-@property (nonatomic,strong) id target;
-@property (nonatomic,strong) id gameController;
+@property (nonatomic,strong) LLSPlayer* player;
+@property (nonatomic,strong) LLSGame* gameController;
 @property (nonatomic,strong) LLSBeaconRangeManager* targetTracker;
 
-
--(void)sendNameForTargetID:(NSString*)name;
--(void)didRecieveResponseToNameSubmission:(BOOL)targetValid;
+-(void)didRecieveNewTarget:(NSNumber*)tgtNumber;
 
 
 @end

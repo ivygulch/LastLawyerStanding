@@ -11,10 +11,12 @@
 @interface LLSPlaytimeViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *numberServedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberRemainingLabel;
+@property (nonatomic,assign) long numberServed;
+@property (nonatomic,assign) long numberRemaining;
 @property (weak, nonatomic) IBOutlet UILabel *targetLabel;
 @property (weak, nonatomic) IBOutlet UITextField *targetNameField;
 @property (weak, nonatomic) IBOutlet UIButton *issueSubpeonaButton;
-@property (weak, nonatomic) IBOutlet UILabel *proxyWarningButton;
+@property (weak, nonatomic) IBOutlet UILabel *proxyWarningLabel;
 
 @property (nonatomic,assign) BOOL enableSubpeonasFromProximity;
 @property (nonatomic,assign) BOOL enableSubpeonasFromField;
@@ -34,7 +36,10 @@
     self.targetNameField.delegate = self;
     self.issueSubpeonaButton.enabled = NO;
     self.enableSubpeonasFromProximity = NO;
+    self.numberServed = 0;
     
+    //TODO:--> remove this debug code
+    self.player = [[LLSPlayer alloc]init];
     [self didRecieveNewTarget:[NSNumber numberWithLong:127]];
     
     //self.targetTracker.aDelegate = self;
@@ -53,7 +58,37 @@
     [self.targetNameField resignFirstResponder];
     self.issueSubpeonaButton.enabled = NO;
     self.enableSubpeonasFromField = NO;
-    NSLog(@"issue to %@",self.targetNameField.text);
+    
+    NSNumber* listedNumber = [NSNumber numberWithLongLong:self.targetNameField.text.longLongValue];
+    
+    if ([self.player.targetBeaconId isEqualToNumber:listedNumber]) {
+        NSLog(@"issue to %@",self.targetNameField.text);
+        //self.proxyWarningLabel.text = @"SERVED!";
+        //self.proxyWarningLabel.textColor = [UIColor greenColor];
+        
+        self.numberServed++;
+        self.numberServedLabel.text = [NSString stringWithFormat:@"%lu"
+                                       ,self.numberServed];
+        
+        UILabel* successLabel = [[UILabel alloc]initWithFrame:(CGRect){0,0,self.view.bounds.size.width,self.view.bounds.size.width}];
+        successLabel.font = [UIFont systemFontOfSize:100];
+        successLabel.textColor = [UIColor greenColor];
+        successLabel.text = self.targetNameField.text;
+        successLabel.contentMode = UIViewContentModeCenter;
+        successLabel.textAlignment = NSTextAlignmentCenter;
+        successLabel.alpha = 0;
+        [self.view addSubview:successLabel];
+        [UIView animateWithDuration:1 animations:^{
+            successLabel.alpha = 1;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:1 animations:^{
+                successLabel.alpha = 0;
+            } completion:^(BOOL finished) {
+                [successLabel removeFromSuperview];
+                
+            }];
+        }];
+    }
     
 }
 
@@ -72,8 +107,14 @@
 
 -(void)didRecieveNewTarget:(NSNumber*)tgtNumber{
     
+    self.targetTracker = nil;
+    
+    self.player.targetBeaconId = tgtNumber;
+    
     self.targetTracker = [[LLSBeaconRangeManager alloc]initWithMinor:tgtNumber];
     self.targetTracker.beaconDelegate = self;
+    
+    self.proxyWarningLabel.text = @"PROXIMITY WARNING!!!";
 
 }
 - (void)beaconVisible;
@@ -98,15 +139,15 @@
 
 }
 -(void)makeInvisableForInvisableTarget{
-    self.proxyWarningButton.hidden = YES;
+    self.proxyWarningLabel.hidden = YES;
 }
 -(void)showYellowForVisableTarget{
-    self.proxyWarningButton.hidden = NO;
-    self.proxyWarningButton.textColor = [UIColor yellowColor];
+    self.proxyWarningLabel.hidden = NO;
+    self.proxyWarningLabel.textColor = [UIColor yellowColor];
 }
 -(void)flashRedForImmediateTarget{
-    self.proxyWarningButton.hidden = NO;
-    self.proxyWarningButton.textColor = [UIColor redColor];
+    self.proxyWarningLabel.hidden = NO;
+    self.proxyWarningLabel.textColor = [UIColor redColor];
 }
 
 @end
