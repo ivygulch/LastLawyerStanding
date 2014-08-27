@@ -12,15 +12,16 @@
 		F879A98319AD862D00921266 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98219AD862D00921266 /* UIKit.framework */; };
 		F879A98919AD862D00921266 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F879A98719AD862D00921266 /* InfoPlist.strings */; };
 		F879A98B19AD862D00921266 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A98A19AD862D00921266 /* main.m */; };
-		F879A98F19AD862D00921266 /* LLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A98E19AD862D00921266 /* LLSAppDelegate.m */; };
 		F879A99219AD862D00921266 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F879A99019AD862D00921266 /* Main.storyboard */; };
-		F879A99519AD862D00921266 /* LLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A99419AD862D00921266 /* LLSViewController.m */; };
 		F879A99719AD862D00921266 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F879A99619AD862D00921266 /* Images.xcassets */; };
 		F879A99E19AD862D00921266 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A99D19AD862D00921266 /* XCTest.framework */; };
 		F879A99F19AD862D00921266 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A97E19AD862D00921266 /* Foundation.framework */; };
 		F879A9A019AD862D00921266 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F879A98219AD862D00921266 /* UIKit.framework */; };
 		F879A9A819AD862D00921266 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F879A9A619AD862D00921266 /* InfoPlist.strings */; };
 		F879A9AA19AD862D00921266 /* LastLawyerStandingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9A919AD862D00921266 /* LastLawyerStandingTests.m */; };
+		F879A9BA19AD88F100921266 /* LLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9B619AD88F100921266 /* LLSAppDelegate.m */; };
+		F879A9BB19AD88F100921266 /* LLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9B919AD88F100921266 /* LLSViewController.m */; };
+		F879A9BF19AD892E00921266 /* LLSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F879A9BE19AD892E00921266 /* LLSNetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,17 +43,19 @@
 		F879A98819AD862D00921266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F879A98A19AD862D00921266 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F879A98C19AD862D00921266 /* LastLawyerStanding-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LastLawyerStanding-Prefix.pch"; sourceTree = "<group>"; };
-		F879A98D19AD862D00921266 /* LLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLSAppDelegate.h; sourceTree = "<group>"; };
-		F879A98E19AD862D00921266 /* LLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLSAppDelegate.m; sourceTree = "<group>"; };
 		F879A99119AD862D00921266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F879A99319AD862D00921266 /* LLSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLSViewController.h; sourceTree = "<group>"; };
-		F879A99419AD862D00921266 /* LLSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLSViewController.m; sourceTree = "<group>"; };
 		F879A99619AD862D00921266 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F879A99C19AD862D00921266 /* LastLawyerStandingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LastLawyerStandingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F879A99D19AD862D00921266 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F879A9A519AD862D00921266 /* LastLawyerStandingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LastLawyerStandingTests-Info.plist"; sourceTree = "<group>"; };
 		F879A9A719AD862D00921266 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F879A9A919AD862D00921266 /* LastLawyerStandingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LastLawyerStandingTests.m; sourceTree = "<group>"; };
+		F879A9B519AD88F100921266 /* LLSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSAppDelegate.h; sourceTree = "<group>"; };
+		F879A9B619AD88F100921266 /* LLSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSAppDelegate.m; sourceTree = "<group>"; };
+		F879A9B819AD88F100921266 /* LLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSViewController.h; sourceTree = "<group>"; };
+		F879A9B919AD88F100921266 /* LLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSViewController.m; sourceTree = "<group>"; };
+		F879A9BD19AD892E00921266 /* LLSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSNetworkManager.h; sourceTree = "<group>"; };
+		F879A9BE19AD892E00921266 /* LLSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSNetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +115,8 @@
 		F879A98419AD862D00921266 /* LastLawyerStanding */ = {
 			isa = PBXGroup;
 			children = (
-				F879A98D19AD862D00921266 /* LLSAppDelegate.h */,
-				F879A98E19AD862D00921266 /* LLSAppDelegate.m */,
+				F879A9B319AD88F100921266 /* source */,
 				F879A99019AD862D00921266 /* Main.storyboard */,
-				F879A99319AD862D00921266 /* LLSViewController.h */,
-				F879A99419AD862D00921266 /* LLSViewController.m */,
 				F879A99619AD862D00921266 /* Images.xcassets */,
 				F879A98519AD862D00921266 /* Supporting Files */,
 			);
@@ -150,6 +150,43 @@
 				F879A9A619AD862D00921266 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F879A9B319AD88F100921266 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F879A9BC19AD891200921266 /* network */,
+				F879A9B419AD88F100921266 /* shared */,
+				F879A9B719AD88F100921266 /* viewcontroller */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		F879A9B419AD88F100921266 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				F879A9B519AD88F100921266 /* LLSAppDelegate.h */,
+				F879A9B619AD88F100921266 /* LLSAppDelegate.m */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		F879A9B719AD88F100921266 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				F879A9B819AD88F100921266 /* LLSViewController.h */,
+				F879A9B919AD88F100921266 /* LLSViewController.m */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
+		F879A9BC19AD891200921266 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				F879A9BD19AD892E00921266 /* LLSNetworkManager.h */,
+				F879A9BE19AD892E00921266 /* LLSNetworkManager.m */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F879A98F19AD862D00921266 /* LLSAppDelegate.m in Sources */,
-				F879A99519AD862D00921266 /* LLSViewController.m in Sources */,
+				F879A9BB19AD88F100921266 /* LLSViewController.m in Sources */,
+				F879A9BA19AD88F100921266 /* LLSAppDelegate.m in Sources */,
+				F879A9BF19AD892E00921266 /* LLSNetworkManager.m in Sources */,
 				F879A98B19AD862D00921266 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
