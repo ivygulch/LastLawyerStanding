@@ -35,6 +35,9 @@
 
     [self.nameTextField resignFirstResponder];
     [self.beaconIdTextField resignFirstResponder];
+    
+    self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
+
 }
 
 - (IBAction) debugAction:(id) sender;
@@ -99,7 +102,6 @@
 - (void) gameStarted:(LLSGame *) game;
 {
     if (!self.playtimeViewController) {
-        self.playtimeViewController = [[LLSPlaytimeViewController alloc]initWithGame:self.game];
         [self presentViewController:self.playtimeViewController animated:YES completion:nil];
         
         [self.playtimeViewController didMoveToParentViewController:self];

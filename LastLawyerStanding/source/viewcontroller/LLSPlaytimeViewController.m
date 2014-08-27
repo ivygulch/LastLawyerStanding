@@ -114,7 +114,7 @@
     
     NSNumber* listedNumber = [NSNumber numberWithLongLong:self.targetNameField.text.longLongValue];
     
-    if ([self.player.targetBeaconId isEqualToNumber:listedNumber]) {
+    if ([self.gameController.myPlayer.targetBeaconId isEqualToNumber:listedNumber]) {
         NSLog(@"issue to %@",self.targetNameField.text);
         //self.proxyWarningLabel.text = @"SERVED!";
         //self.proxyWarningLabel.textColor = [UIColor greenColor];
@@ -164,7 +164,7 @@
     if (tgtNumber){
     self.targetTracker = nil;
     
-    self.player.targetBeaconId = tgtNumber;
+    self.gameController.myPlayer.targetBeaconId = tgtNumber;
     
     self.targetTracker = [[LLSBeaconRangeManager alloc]initWithMinor:tgtNumber];
     self.targetTracker.beaconDelegate = self;
