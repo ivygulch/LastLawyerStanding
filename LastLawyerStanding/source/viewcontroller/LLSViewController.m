@@ -21,8 +21,8 @@
 {
     [super viewDidLoad];
 
-    self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"LLSService"];
-    self.game = [[LLSGame alloc] initWithNetworkManager:self.networkManager myBeaconId:@(1)];
+   // self.networkManager = [[LLSNetworkManager alloc] initWithDisplayName:@"me" serviceType:@"LLSService"];
+   // self.game = [[LLSGame alloc] initWithNetworkManager:self.networkManager myBeaconId:@(1)];
 }
 
 - (IBAction) browseAction:(id) sender;

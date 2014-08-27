@@ -13,9 +13,11 @@
 
 @interface LLSPlaytimeViewController : UIViewController<LLSBeaconRangeDelegate>
 
-@property (nonatomic,strong) LLSPlayer* target;
+@property (nonatomic,strong) LLSPlayer* player;
 @property (nonatomic,strong) LLSGame* gameController;
 @property (nonatomic,strong) LLSBeaconRangeManager* targetTracker;
+
+-(void)didRecieveNewTarget:(NSNumber*)tgtNumber;
 
 
 @end
